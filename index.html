@@ -1,83 +1,61 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carlos HenriAM</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="mediaquery.css">
-    <link rel="shortcut icon" href="imagem2.jpg" type="favicon.jpg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chess Academy Portuguēs</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div id="container-logo"><a href="index.html"><img src="imagem.png" alt="logo em png" id="logo"></a></div>
-        <nav>
-                <a href="index.html" class="titulo menuItem">Home</a>
-                <a href="#" class="titulo">Sobre</a>
-                <a href="#" class="titulo">Experiência<a href="#" class="titulo " id="change-font">Projetos</a></li>
-        </nav>
-    </header>
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">Chess Academy <span style="color:white;">pt</span></h1>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#torneios">Torneios</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main>
-            <section id="container-conteudo">
-                <div id="imagem"><img src="imagem2.jpg" alt="foto de um homem"></div>
-                <div id="bloco">
-                    <div class="conteudo">
-                        <h1>Sobre Carlos...</h1>
-                        <p>Prazer, meu nome é Carlos. Sou desenvolvedor Front End e atuo há um ano na área. Ao longo desse período, adquiri experiência em HTML, CSS, JavaScript e frameworks modernos, além de trabalhar em projetos desafiadores que aprimoraram minhas habilidades técnicas e de design.
-                        </p>
-                    </div>
-                </div>
-            </section>
-            <section>
-                <div id="bloco2">
-                    <div class="conteudo">
-                        <h1>Experiência</h1>
-                        <p>Um dos meus principais projetos foi o desenvolvimento de um sistema de gerenciamento de conteúdo para uma startup de tecnologia. Nesse projeto, fui responsável pela criação de uma interface intuitiva e responsiva, que melhorou significativamente a experiência do usuário e a eficiência da equipe de administração de conteúdo.
-                        </p>
-                    </div>
-                </div>
-            </section>
-        <div id="container-background">
-            <section>
-                <div id="bloco3">
-                    <div class="conteudo-projetos3">
-                        <h1>Projeto - Optimus Tech</h1>
-                        <div class="container-img">
-                            <a href="https://carloshenriqueam.github.io/optimus-tech/home.html" target="_blank"><img src="images/optimus-tech.PNG" alt="Projeto site empresa ficticia optimus tech" id="imagem-optimus-tech"></a>
-                        </div>
-                    </div>
-                </div>
-                <section class="container-buttoms">
-                    <a href="https://carloshenriqueam.github.io/optimus-tech/home.html" target="_blank" rel="external">
-                <div class="buttom-demo">
-                        <h1>Ver</h1>
-                </div>
-                     </a>
-                     <a href="https://github.com/Carloshenriqueam/optimus-tech" target="_blank" rel="external">
-                <div class="buttom-git">
-                        <h1>GitHub</h1>
-                </div>
-                     </a>
-                <div class="buttom-desc">
-                        <h1>Descrição</h1>
-                </div>
-            </section>
-            </section>
-        </div>            
-    </main>
-            <footer>
-                <div class="container-main">
-                    <h1>Contato</h1>
-                    <div class="form-container">
-                        <form action="" method="get" autocomplete="on">
-                            <input type="email" name="email" id="iemail" placeholder="Seu e-mail" autocomplete="email" required>
-                            <input type="submit" value="Enviar" maxlength="30">
-                        </form>
-                    </div>
-                </div>
-            </footer>
-            
+  <main>
+    <section id="home" class="home-section">
+      <h2>Bem-vindo ao Clube!</h2>
+      <p>Descubra torneios incríveis e mostre suas habilidades no xadrez!</p>
+    </section>
+
+    <section id="torneios" class="torneios-section">
+      <h2>Torneios</h2>
+      <table class="torneios-table">
+        <thead>
+          <tr>
+            <th>Jogador 1</th>
+            <th>Vs</th>
+            <th>Jogador 2</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Jogador 3</td>
+            <td>X</td>
+            <td>Jogador 4</td>
+          </tr>
+          <tr>
+            <td>Jogador 5</td>
+            <td>X</td>
+            <td>Jogador 6</td>
+          </tr>
+          <tr>
+            <td>Jogador 7</td>
+            <td>X</td>
+            <td>Jogador 8</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Chess Academy Portuguēs. Todos os direitos reservados.</p>
+  </footer>
 </body>
-</html>>
+</html>
