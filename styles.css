@@ -1,35 +1,47 @@
-/* Reset básico */
 @font-face {
   font-family: Beat Tech;
-  src: url('BEATTECH.otf')
+  src: url('beat_tech/BEATTECH.otf')
+}
+@font-face {
+  font-family: Beat Tech2;
+  src: url('beat_tech/BEATTECH-Line.otf')
 }
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
+  
 body {
-  font-family: 'Arial', sans-serif;
+  
   color: #fff;
   background: linear-gradient(#36060b, #000);
   line-height: 1.6;
   background-attachment: fixed;
 }
-
-/* Navbar */
+@keyframes bg{
+  0%{
+    background-position: 0% 50%;
+  }
+  50%{
+    background-position: 100% 100%;
+  }
+  100%{
+    background-position: 0% 50%;
+  }
+}
 .navbar{
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center;        
   padding: 1rem 2rem;
   background-color: #111;
   border-bottom: 3px solid #c00;
   border-radius: 10px;
   box-shadow: 1px 1px 40px #870f00;
 }
-
 .navbar .logo {
+  font-family: 'Arial', sans-serif;  
   font-size: 1.5rem;
   color: #c00;
   font-weight: bold;
@@ -45,6 +57,7 @@ body {
 }
 
 .navbar .nav-links a {
+  font-family: 'Beat Tech', sans-serif;
   text-decoration: none;
   color: #fff;
   font-size: 1rem;
@@ -54,8 +67,6 @@ body {
 .navbar .nav-links a:hover {
   color: #870f00;
 }
-
-/* Home Section */
 .home-section {
   text-align: center;
   padding: 5rem 2rem;
@@ -118,7 +129,53 @@ body {
 .torneios-table tbody tr:hover {
   background-color: #444;
 }
+.container-buttom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+  transition: .5s;
+}
+
+.buttom-invite {
+  display: flex;
+  background: linear-gradient(#d1372c, #000);
+  width: 200px;
+  height: 60px;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+  box-shadow: 1px 10px 20px rgba(0, 0, 0, 255);
+  animation: float-side 6s infinite ease-in-out; /* Animação adicionada */
+}
+
+.buttom-invite a {
+  color: white;
+  font-family: 'beat tech', sans-serif;
+  text-decoration: none;
+  font-size: 30px;
+}
+.container-buttom:hover{
+  text-shadow: 1px 1px 20px red;
+  transition: .5s;
+}
+/* Keyframes para o movimento lateral */
+@keyframes float-side {
+  0% {
+    transform: translateX(0); /* Posição inicial */
+  }
+  50% {
+    transform: translateY(-20px); /* Move para a direita */
+  }
+-100% {
+    transform: translateX(50px); /* Move para a direita */
+  }
+  100% {
+    transform: translateX(0); /* Volta para a posição inicial */
+  }
+}
 footer > p{
   text-align: center;
-  font-size: .5rem;
+  font-size: .5rem;7
 }
