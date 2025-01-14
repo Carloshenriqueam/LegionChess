@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chess Academy Portuguēs</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(#36060b, #000);
+      
+    }
+    
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      overflow-x: scroll; /* Habilita apenas o rolamento horizontal */
+      overflow-y: hidden; /* Desativa o rolamento vertical */
+      white-space: nowrap; /* Garante que o conteúdo não quebre para baixo */
+    }
+    
+
+    /* Adiciona estilo para garantir a largura maior do conteúdo carregado */
+    .iframe-container {
+      width: 100%;
+      height: 50vh; /* Define a altura do iframe */
+      overflow: hidden; /* Impede o rolamento da página principal */
+      box-shadow: 10px 10px 30px black;
+    }
+}
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">Chess Academy <span style="color:white;">pt</span></h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Torneios.html">Torneios</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="iframe-container">
+    <iframe src="TimeofCalculo.html" title=""></iframe>
+  </div>
+</body>
+</html>
