@@ -1,11 +1,11 @@
 /* Reset básico */
 @font-face {
   font-family: Beat Tech;
-  src: url('BEATTECH.otf')
+  src: url('beat_tech/BEATTECH.otf')
 }
 @font-face {
   font-family: Beat Tech2;
-  src: url('BEATTECH-Line.otf')
+  src: url('beat_tech/BEATTECH-Line.otf')
 }
 * {
   margin: 0;
@@ -15,7 +15,7 @@
 
 body {
   font-family: 'Arial', sans-serif;
-  background: linear-gradient(#36060b, #000);
+  background: linear-gradient(150deg,#000,#36060b, #000);
   color: #fff;
   line-height: 1.5;
   padding: 20px;
