@@ -1,0 +1,171 @@
+/* Reset básico */
+@font-face {
+  font-family: Beat Tech;
+  src: url('BEATTECH.otf')
+}
+@font-face {
+  font-family: Beat Tech2;
+  src: url('BEATTECH-Line.otf')
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(150deg,#000,#36060b, #000);
+  color: #fff;
+  line-height: 1.5;
+  padding: 20px;
+  width: 1200px; /* Largura fixa */
+  margin: auto; /* Centraliza o conteúdo horizontalmente */
+  background-attachment: fixed;
+}
+
+.page-container {
+  width: 1200px; /* Largura fixa */
+  margin: auto;
+}
+
+/* Header Geral */
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 32px;
+  color: white;
+  margin-bottom: 5px;
+  font-family: 'Beat Tech', sans-serif;
+  text-shadow: 1px 1px 30px white;
+}
+
+.header p{
+  font-size: 16px;
+  color: #888;
+  font-family: 'Beat Tech', sans-serif;
+}
+
+/* Bracket Section */
+.bracket-section {
+  margin-bottom: 50px;
+}
+
+.bracket {
+  display: flex;
+  justify-content: space-between; /* Distribui os itens com espaçamento fixo */
+  gap: 20px;
+  width: 1200px;
+}
+
+.round {
+  text-align: center;
+}
+
+.round h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color:  #00bfff;
+  font-family: 'Beat Tech', sans-serif;
+  text-shadow: 1px 1px 30px #7aceff;
+}
+
+.match {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  margin-right: 20px;
+  padding: 1px 1px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+}
+.final {
+  position: relative; /* Necessário para o uso do ::before */
+  background: rgba(255, 255, 255, 00.1); /* Fundo do elemento *0
+  border-radius: 10px; /* Cantos arredondados */
+  padding: 5px; /* Espaçamento interno */
+  overflow: hidden; /* Garante que o gradiente não escape */
+}
+
+.final::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 10px; /* Mesmo raio da borda */
+  padding: 3px; /* Define a largura da borda gradiente */
+  background: linear-gradient(45deg, #ba9004, #574304); /* Gradiente da borda */
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none; /* Garante que o elemento não interfira no clique */
+
+}
+.final span{
+  text-shadow: 1px 1px 20px yellow;
+}
+.match span {
+  font-size: 15px;
+  margin: 15px;
+}
+
+.vs {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-family: 'Beat Tech', sans-serif;
+  text-shadow: 1px 1px 30px  white;
+}
+
+/* Standings Section */
+.table {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 1200px;
+}
+
+.table-column {
+  width: 580px; /* Largura fixa para cada coluna */
+}
+
+.table-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.position {
+  font-size: 20px;
+  font-weight: bold;
+  color:  #888;
+  text-shadow: 1px 1px 30px  white;
+}
+
+.player {
+  flex: 1;
+  text-align: left;
+  margin-left: 10px;
+  font-size: 18px;
+}
+
+.points {
+  font-size: 20px;
+  font-weight: bold;
+  color: #00bfff;
+}
