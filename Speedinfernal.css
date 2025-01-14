@@ -1,11 +1,11 @@
 /* Reset básico */
 @font-face {
   font-family: Beat Tech;
-  src: url('beat_tech/BEATTECH.otf')
+  src: url('BEATTECH.otf')
 }
 @font-face {
   font-family: Beat Tech2;
-  src: url('beat_tech/BEATTECH-Line.otf')
+  src: url('BEATTECH-Line.otf')
 }
 * {
   margin: 0;
