@@ -15,7 +15,7 @@
 
 body {
   font-family: 'Arial', sans-serif;
-  background: linear-gradient(#36060b, #000);
+  background: linear-gradient(150deg,#000,#36060b, #000);
   color: #fff;
   line-height: 1.5;
   padding: 20px;
@@ -83,7 +83,7 @@ body {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 5px;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  
+
 }
 .final {
   position: relative; /* Necessário para o uso do ::before */
@@ -107,7 +107,7 @@ body {
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none; /* Garante que o elemento não interfira no clique */
-  
+
 }
 .final span{
   text-shadow: 1px 1px 20px yellow;
