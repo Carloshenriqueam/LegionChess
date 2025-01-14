@@ -194,7 +194,6 @@ body {
   align-items: center;
   margin-top: 50px;
 }
-/* Home Section */
 .home-section4{
   text-align: center;
   padding: 5rem 2rem;
@@ -228,7 +227,46 @@ body {
   text-shadow: 1px 1px 50px white;
   margin-top: 50px;
 }
-/* Torneios Section */
+
+.container-home-section5{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+.home-section5{
+  text-align: center;
+  padding: 5rem 2rem;
+  background: linear-gradient(rgba(40, 40, 40,255), transparent );
+  width: 400px;
+  border-radius: 10px ;
+  border-right:2px solid rgba(90,90,90,255);
+}
+.home-section5:hover{
+   cursor: pointer;
+  
+}
+.home-section5 a{
+    text-decoration: none;
+}
+.home-section5 h2 {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 30px #777;
+  font-family: 'beat tech', Sans-Serif;
+  
+}
+.home-section5 p {
+  font-size: 1.2rem;
+  color: #ddd;
+}
+.informacoes5{
+  padding: 5px;
+  font-family: 'beat tech', Sans-Serif;
+  text-shadow: 1px 1px 50px white;
+  margin-top: 50px;
+}
 .torneios-section {
   padding: 3rem 2rem;
 }
@@ -272,6 +310,9 @@ body {
 .torneios-table tbody tr:hover {
   background-color: #444;
 }
+footer{
+  margin-top: 20%;
+}
 footer > p{
   text-align: center;
   font-size: .5rem;
@@ -291,13 +332,15 @@ footer > p{
     .home-section  h2,
     .home-section2 h2,
     .home-section3 h2,
-    .home-section4 h2{
+    .home-section4 h2,
+    .home-section5 h2{
       font-size: 1.9rem;
   }
     .home-section,
     .home-section2,
     .home-section3,
-    .home-section4 {
+    .home-section4, 
+    .home-section5{
       width: 80%
   }
 }
