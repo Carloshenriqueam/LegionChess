@@ -116,7 +116,6 @@ body {
   font-size: 15px;
   margin: 15px;
 }
-
 .vs {
   background: rgba(255, 255, 255, 0.1);
   color: white;
@@ -127,6 +126,10 @@ body {
   text-shadow: 1px 1px 30px  white;
 }
 
+.vencedor{
+    color: #00bfff;
+    text-shadow: 1px 1px 10px #00bfff
+}
 /* Standings Section */
 .table {
   display: flex;
