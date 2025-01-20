@@ -22,20 +22,27 @@ body {
 .navbar{
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center;        
   padding: 1rem 2rem;
-  background-color: #111;
+  background: linear-gradient(190deg,#000, transparent);
   border-bottom: 3px solid #c00;
   border-radius: 10px;
   box-shadow: 1px 1px 40px #870f00;
+  backdrop-filter: blur(5px);
+   position: fixed !important;
+    top: 0;
+    width: 100%;
 }
 
 .navbar .logo {
   font-size: 1.5rem;
   color: #c00;
   font-weight: bold;
+  
 }
-
+.logo{
+  text-shadow: 1px 1px 20px #c00;
+}
 .navbar .nav-links {
   list-style: none;
   display: flex;
