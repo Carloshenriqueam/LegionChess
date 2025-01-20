@@ -26,7 +26,7 @@ body {
   padding: 1rem 2rem;
   background: linear-gradient(190deg,#000, transparent);
   border-bottom: 3px solid #c00;
-  border-radius: 10px;
+  border-radius: 0 0 20px 20px;
   box-shadow: 1px 1px 40px #870f00;
   backdrop-filter: blur(5px);
    position: fixed !important;
@@ -119,6 +119,7 @@ body {
   justify-content: center;
   align-items: center;
   margin-top: 50px;
+
 }
 /* Home Section */
 .home-section2 {
@@ -328,12 +329,28 @@ footer > p{
   display: flex;
 
 }
+
+chess-board {
+  width: 100%;
+  height: 350px; /* Altura do tabuleiro */
+  background: 
+    linear-gradient(to bottom, rgba(0, 0, 0, 2.55), transparent), /* Gradiente semelhante */
+    url('tabuleiro.png'); /* Caminho da imagem do tabuleiro */
+  background-size: cover; /* Faz a imagem cobrir toda a área */
+  background-position: center; /* Centraliza a imagem */
+  position: absolute; /* Garante que esteja no final */
+  bottom: 0; /* Fixa na parte inferior */
+  left: 0;
+  z-index: -1; /* Coloca o tabuleiro abaixo de outros elementos */
+  opacity: 0.1;
+}
 @media (min-width: 768px) and (max-width: 1023px) {
    .container-main{
      display: grid;
      grid-template-columns: 400px 400px;
      justify-content: center;
      align-items: center;
+     margin-top: 100px;
    }
      
     .home-section  h2,
@@ -358,5 +375,6 @@ footer > p{
      justify-content: center;
      align-items: center;
      gap: 4%;
+     margin-top: 100px;
    }
 }
