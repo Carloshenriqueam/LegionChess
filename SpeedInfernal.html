@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chess Academy Portuguēs</title>
-  <link rel="stylesheet" href="Speedinfernal.css">
+  <link rel="stylesheet" href="speedinfernal.css">
 </head>
 <body>
   <div class="page-container">
@@ -17,7 +17,7 @@
       <div class="bracket">
         <div class="round">
           <h2>Fase 1</h2>
-          <div class="match">
+          <div class="match" data-link1="https://lichess.org/NXW7OjcF" data-link2="https://lichess.org/NXW7OjcF" target="_blank">
             <div class="vs vencedor">3</div>
             <span>ezekiel</span>
             <div class="vs">VS</div>
@@ -125,27 +125,27 @@
         <div class="round">
           <h2>Semifinals</h2>
           <div class="match">
-            <div class="vs">1</div>
+            <div class="vs">0</div>
             <span>Guzz</span>
             <div class="vs">VS</div>
             <span>Zeck</span>
-            <div class="vs vencedor">3</div>
+            <div class="vs">0</div>
           </div>
           <div class="match">
-            <div class="vs">2</div>
+            <div class="vs">0</div>
             <span>Marcos</span>
             <div class="vs">VS</div>
             <span>Capivarita</span>
-            <div class="vs vencedor">3</div>
+            <div class="vs">0</div>
           </div>
         </div>
            <div class="round">
           <h2>Finals</h2>
           <div class="match final">
             <div class="vs">0</div>
-            <span>Zeck</span>
+            <span>Winner 1</span>
             <div class="vs">VS</div>
-            <span>Capivarita</span>
+            <span>Winner 2</span>
             <div class="vs">0</div>
           </div>
         </div>
@@ -188,5 +188,74 @@
       </div>
     </section>   Additional rows here -->
   </div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Cria o pop-up dinamicamente
+    const popupOverlay = document.createElement('div');
+    popupOverlay.className = 'popup-overlay';
+    document.body.appendChild(popupOverlay);
+
+    const popup = document.createElement('div');
+    popup.className = 'popup';
+    popup.innerHTML = `
+      <div class="popup-header">Partidas:</div>
+      <div class="popup-body"></div>
+      <button class="popup-close">Fechar</button>
+    `;
+    document.body.appendChild(popup);
+
+    const popupBody = popup.querySelector('.popup-body');
+    const closeButton = popup.querySelector('.popup-close');
+
+    // Função para desabilitar o scroll
+    const disableScroll = () => {
+      document.body.style.overflow = 'hidden';
+    };
+
+    // Função para habilitar o scroll
+    const enableScroll = () => {
+      document.body.style.overflow = '';
+    };
+
+    // Evento para abrir o pop-up
+    document.querySelectorAll('.match').forEach(match => {
+      match.addEventListener('click', () => {
+        const player1 = match.querySelector('span:nth-of-type(1)').textContent;
+        const player2 = match.querySelector('span:nth-of-type(2)').textContent;
+
+        // Captura os links das partidas dos atributos data-link
+        const link1 = match.dataset.link1;
+        const link2 = match.dataset.link2;
+
+        // Exibe os detalhes no pop-up
+        popupBody.innerHTML = `
+          <p><strong>Jogadores:</strong> ${player1} VS ${player2}</p>
+          <p><strong>Links das partidas:</strong></p>
+          <ul>
+            ${link1 ? `<li><a href="${link1}" target="_blank">Partida 1</a></li>` : ''}
+            ${link2 ? `<li><a href="${link2}" target="_blank">Partida 2</a></li>` : ''}
+          </ul>
+        `;
+
+        popup.classList.add('active');
+        popupOverlay.classList.add('active');
+        disableScroll(); // Desativa o scroll ao abrir o pop-up
+      });
+    });
+
+    // Evento para fechar o pop-up
+    closeButton.addEventListener('click', () => {
+      popup.classList.remove('active');
+      popupOverlay.classList.remove('active');
+      enableScroll(); // Habilita o scroll ao fechar o pop-up
+    });
+
+    popupOverlay.addEventListener('click', () => {
+      popup.classList.remove('active');
+      popupOverlay.classList.remove('active');
+      enableScroll(); // Habilita o scroll ao fechar o pop-up
+    });
+  });
+</script>
 </body>
 </html>
