@@ -1,3 +1,4 @@
+/* Reset básico */
 @font-face {
   font-family: Beat Tech;
   src: url('BEATTECH.otf')
@@ -11,172 +12,233 @@
   padding: 0;
   box-sizing: border-box;
 }
-  
+
 body {
-  
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(150deg,#000,#36060b, #000);
   color: #fff;
-  background: linear-gradient(#36060b, #000);
-  line-height: 1.6;
+  line-height: 1.5;
+  padding: 20px;
+  width: 1200px; /* Largura fixa */
+  margin: auto; /* Centraliza o conteúdo horizontalmente */
   background-attachment: fixed;
 }
-@keyframes bg{
-  0%{
-    background-position: 0% 50%;
-  }
-  50%{
-    background-position: 100% 100%;
-  }
-  100%{
-    background-position: 0% 50%;
-  }
+
+.page-container {
+  width: 1200px; /* Largura fixa */
+  margin: auto;
 }
-.navbar{
+
+/* Header Geral */
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 32px;
+  color: white;
+  margin-bottom: 5px;
+  font-family: 'Beat Tech', sans-serif;
+  text-shadow: 1px 1px 30px white;
+}
+
+.header p{
+  font-size: 16px;
+  color: #888;
+  font-family: 'Beat Tech', sans-serif;
+}
+
+/* Bracket Section */
+.bracket-section {
+  margin-bottom: 50px;
+}
+
+.bracket {
+  display: flex;
+  justify-content: space-between; /* Distribui os itens com espaçamento fixo */
+  gap: 20px;
+  width: 1200px;
+}
+
+.round {
+  text-align: center;
+}
+
+.round h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color:  #00bfff;
+  font-family: 'Beat Tech', sans-serif;
+  text-shadow: 1px 1px 30px #7aceff;
+}
+
+.match {
   display: flex;
   justify-content: space-between;
-  align-items: center;        
-  padding: 1rem 2rem;
-  background: linear-gradient(190deg,#000, transparent);
-  border-bottom: 3px solid #c00;
-  border-radius: 0 0 20px 20px;
-  box-shadow: 1px 1px 40px #870f00;
+  align-items: center;
+  margin-bottom: 15px;
+  margin-right: 20px;
+  padding: 1px 1px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+}
+.final {
+  position: relative; /* Necessário para o uso do ::before */
+  background: rgba(255, 255, 255, 0.1); /* Fundo do elemento */
+  border-radius: 10px; /* Cantos arredondados */
+  padding: 5px; /* Espaçamento interno */
+  overflow: hidden; /* Garante que o gradiente não escape */
+}
+
+.final::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 10px; /* Mesmo raio da borda */
+  padding: 3px; /* Define a largura da borda gradiente */
+  background: linear-gradient(45deg, #ba9004, #574304); /* Gradiente da borda */
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none; /* Garante que o elemento não interfira no clique */
+
+}
+.final span{
+  text-shadow: 1px 1px 20px yellow;
+}
+.match span {
+  font-size: 15px;
+  margin: 15px;
+}
+.vs {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-family: 'Beat Tech', sans-serif;
+  text-shadow: 1px 1px 30px  white;
+}
+
+.vencedor{
+    color: #00bfff;
+    text-shadow: 1px 1px 10px #00bfff
+}
+/* Standings Section */
+.table {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 1200px;
+}
+
+.table-column {
+  width: 580px; /* Largura fixa para cada coluna */
+}
+
+.table-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.position {
+  font-size: 20px;
+  font-weight: bold;
+  color:  #888;
+  text-shadow: 1px 1px 30px  white;
+}
+
+.player {
+  flex: 1;
+  text-align: left;
+  margin-left: 10px;
+  font-size: 18px;
+}
+
+.points {
+  font-size: 20px;
+  font-weight: bold;
+  color: #00bfff;
+}
+
+/* Estilo do Pop-up */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(180deg,#36060b, transparent);
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  z-index: 1000;
+  display: none;
+  border: 1px solid rgba(200,200,200,.5);
   backdrop-filter: blur(2px);
 }
-.navbar .logo {
-  font-family: 'Arial', sans-serif;  
-  font-size: 1.5rem;
-  color: #c00;
+
+.popup.active {
+  display: block;
+}
+
+.popup-header {
+  font-size: 20px;
   font-weight: bold;
-}
-
-.navbar .nav-links {
-  list-style: none;
-  display: flex;
-}
-
-.navbar .nav-links li {
-  margin-left: 2rem;
-}
-
-.navbar .nav-links a {
+  margin-bottom: 20px;
   font-family: 'Beat Tech', sans-serif;
+}
+
+.popup-body {
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.popup-body a{
   text-decoration: none;
-  color: #fff;
-  font-size: 1rem;
-  transition: color 0.3s;
+  color: #777;
+  padding: 3px;
+  border-radius: 5px;
 }
-
-.navbar .nav-links a:hover {
-  color: #870f00;
-}
-.home-section {
-  text-align: center;
-  padding: 5rem 2rem;
-}
-
-.home-section h2 {
-  font-size: 2.5rem;
-  color: #c00;
-  margin-bottom: 1rem;
-  text-shadow: 1px 1px 30px red;
-  font-family: 'beat tech', Sans-Serif;
-}
-
-.home-section p {
-  font-size: 1.2rem;
-  color: #ddd;
-}
-
-/* Torneios Section */
-.torneios-section {
-  padding: 3rem 2rem;
-}
-
-.torneios-section h2 {
-  font-size: 2rem;
-  color: #c00;
-  margin-bottom: 2rem;
-  text-align: center;
-  font-family: 'beat tech', Sans-Serif;
-}
-
-.torneios-table {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  border-collapse: collapse;
-  background-color: #000;
-}
-
-.torneios-table thead {
-  background-color: #36060b;
-}
-
-.torneios-table th,
-.torneios-table td {
-  padding: 1rem;
-  text-align: center;
-  border: 1px solid #333;
-}
-
-.torneios-table th {
-  color: #fff;
-  font-weight: bold;
-}
-
-.torneios-table tbody tr:nth-child(even) {
-  background-color: #36060b;
-}
-
-.torneios-table tbody tr:hover {
-  background-color: #444;
-}
-.container-buttom {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 100px;
-  transition: .5s;
-}
-
-.buttom-invite {
-  display: flex;
-  background: linear-gradient(#d1372c, #000);
-  width: 200px;
-  height: 60px;
-  border-radius: 10px;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid white;
-  box-shadow: 1px 10px 20px rgba(0, 0, 0, 255);
-  animation: float-side 6s infinite ease-in-out; /* Animação adicionada */
-}
-
-.buttom-invite a {
+.popup-close {
+  background: #333;
   color: white;
-  font-family: 'beat tech', sans-serif;
-  text-decoration: none;
-  font-size: 30px;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 5px;
+  transition: 0.3s;
+  font-family: 'Beat Tech', sans-serif;
 }
-.container-buttom:hover{
-  text-shadow: 1px 1px 20px red;
-  transition: .5s;
+.popup-close:hover{
+  background: #555;
+  cursor: pointer;
+  transition: 0.3s;
 }
-/* Keyframes para o movimento lateral */
-@keyframes float-side {
-  0% {
-    transform: translateX(0); /* Posição inicial */
-  }
-  50% {
-    transform: translateY(-20px); /* Move para a direita */
-  }
--100% {
-    transform: translateX(50px); /* Move para a direita */
-  }
-  100% {
-    transform: translateX(0); /* Volta para a posição inicial */
-  }
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: none;
 }
-footer > p{
-  text-align: center;
-  font-size: .5rem;7
+
+.popup-overlay.active {
+  display: block;
 }
