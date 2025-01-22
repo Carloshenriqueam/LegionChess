@@ -3,6 +3,10 @@
   font-family: Beat Tech;
   src: url('BEATTECH.otf')
 }
+@font-face {
+  font-family: Beat Tech2;
+  src: url('BEATTECH-Line.otf')
+}
 * {
   margin: 0;
   padding: 0;
@@ -119,7 +123,7 @@ body {
   justify-content: center;
   align-items: center;
   margin-top: 50px;
-
+  
 }
 /* Home Section */
 .home-section2 {
@@ -245,7 +249,7 @@ body {
 .home-section5{
   text-align: center;
   padding: 5rem 2rem;
-  background: linear-gradient(rgba(40, 40, 40,255), transparent );
+  background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
   width: 400px;
   border-radius: 10px ;
   border-right:2px solid rgba(90,90,90,255);
@@ -261,13 +265,16 @@ body {
   font-size: 2.5rem;
   color: #fff;
   margin-bottom: 1rem;
-  text-shadow: 1px 1px 30px #777;
+  text-shadow: 1px 1px 30px #006edb;
   font-family: 'beat tech', Sans-Serif;
   
 }
 .home-section5 p {
   font-size: 1.2rem;
   color: #ddd;
+}
+#sub-titulo{
+  font-family: 'beat tech', Sans-Serif;
 }
 .informacoes5{
   padding: 5px;
@@ -328,21 +335,6 @@ footer > p{
 .button-ver{
   display: flex;
 
-}
-
-chess-board {
-  width: 100%;
-  height: 350px; /* Altura do tabuleiro */
-  background: 
-    linear-gradient(to bottom, rgba(0, 0, 0, 2.55), transparent), /* Gradiente semelhante */
-    url('tabuleiro.png'); /* Caminho da imagem do tabuleiro */
-  background-size: cover; /* Faz a imagem cobrir toda a área */
-  background-position: center; /* Centraliza a imagem */
-  position: absolute; /* Garante que esteja no final */
-  bottom: 0; /* Fixa na parte inferior */
-  left: 0;
-  z-index: -1; /* Coloca o tabuleiro abaixo de outros elementos */
-  opacity: 0.1;
 }
 @media (min-width: 768px) and (max-width: 1023px) {
    .container-main{
