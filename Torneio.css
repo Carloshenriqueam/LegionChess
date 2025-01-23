@@ -21,8 +21,6 @@ body {
   line-height: 1.6;
   background-attachment: fixed;
 }
-
-
 .navbar{
   display: flex;
   justify-content: space-between;
@@ -369,4 +367,22 @@ footer > p{
      gap: 4%;
      margin-top: 100px;
    }
+}
+
+/* Efeito de abertura com blur */
+html {
+  filter: blur(10px);
+  opacity: 0;
+  animation: blurIn .5s ease-out forwards;
+}
+
+@keyframes blurIn {
+  0% {
+    filter: blur(10px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
+  }
 }
