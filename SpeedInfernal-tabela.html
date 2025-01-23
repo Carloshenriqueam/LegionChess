@@ -102,6 +102,23 @@
       height: 100%;
       border: none;
     }
+    
+    body {
+  filter: blur(10px);
+  opacity: 0;
+  animation: blurIn 1.5s ease-out forwards;
+}
+
+@keyframes blurIn {
+  0% {
+    filter: blur(10px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
   </style>
 </head>
 <body>
