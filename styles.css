@@ -13,7 +13,6 @@
 }
   
 body {
-  
   color: #fff;
   background: linear-gradient(#36060b, #000);
   line-height: 1.6;
@@ -179,4 +178,22 @@ body {
 footer > p{
   text-align: center;
   font-size: .5rem;7
+}
+
+
+body {
+  filter: blur(10px);
+  opacity: 0;
+  animation: blurIn .5s ease-out forwards;
+}
+
+@keyframes blurIn {
+  0% {
+    filter: blur(10px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
+  }
 }
