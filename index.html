@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chess Academy Portuguēs</title>
+  <title>Chess Academy Português</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
     <nav class="navbar">
       <h1 class="logo">Chess Academy <span style="color:white;">pt</span></h1>
+      <div id="hamburger">☰</div>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="Torneios.html">Torneios</a></li>
@@ -22,13 +23,25 @@
       <h2>Bem-vindo ao Clube!</h2>
       <p>Descubra torneios incríveis e mostre suas habilidades no xadrez!</p>
     </section>
+
     <div class="container-buttom">
-     <div class="buttom-invite"><a href="Torneios.html">Torneios</a></div>
-   </div>
+      <div class="buttom-invite"><a href="Torneios.html">Torneios</a></div>
+    </div>
   </main>
 
   <footer>
-    <p>&copy; 2025 Chess Academy Portuguēs. Todos os direitos reservados.</p>
+    <p>&copy; 2025 Chess Academy Português. Todos os direitos reservados.</p>
   </footer>
+
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.querySelector(".nav-links");
+
+    // Alterna o menu ao clicar no botão hambúrguer
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("hidden");
+      navLinks.classList.toggle("active");
+    });
+  </script>
 </body>
 </html>
