@@ -116,6 +116,9 @@ body {
   font-size: 15px;
   margin: 15px;
 }
+.match:hover{
+  cursor: pointer;
+}
 .vs {
   background: rgba(255, 255, 255, 0.1);
   color: white;
@@ -242,3 +245,4 @@ body {
 .popup-overlay.active {
   display: block;
 }
+
