@@ -87,6 +87,7 @@
       background: linear-gradient(#36060b, #000);
       display: flex;
       flex-direction: column;
+      
     }
 
     .iframe-container {
@@ -107,6 +108,7 @@
   filter: blur(10px);
   opacity: 0;
   animation: blurIn 1.5s ease-out forwards;
+  
 }
 
 @keyframes blurIn {
@@ -118,6 +120,18 @@
     filter: blur(0);
     opacity: 1;
   }
+}
+html {
+  overflow: -moz-scrollbars-none; /* Oculta no Firefox */
+  -ms-overflow-style: none; /* Oculta no Internet Explorer e Edge */
+}
+
+body {
+  scrollbar-width: none; /* Oculta no Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Oculta no Chrome, Safari e Edge baseado no Chromium */
 }
   </style>
 </head>
