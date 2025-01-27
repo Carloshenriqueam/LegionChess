@@ -21,40 +21,44 @@ body {
   line-height: 1.6;
   background-attachment: fixed;
 }
-.navbar{
+.navbar {
   display: flex;
   justify-content: space-between;
-  align-items: center;        
+  align-items: center;
   padding: 1rem 2rem;
-  background: linear-gradient(190deg,#000, transparent);
+  background: linear-gradient(190deg, #000, transparent);
   border-bottom: 3px solid #c00;
   border-radius: 0 0 20px 20px;
   box-shadow: 1px 1px 40px #870f00;
-  backdrop-filter: blur(5px);
-   position: fixed !important;
-    top: 0;
-    width: 100%;
+  backdrop-filter: blur(2px);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 72px;
 }
 
 .navbar .logo {
+  font-family: 'Arial', sans-serif;
   font-size: 1.5rem;
   color: #c00;
   font-weight: bold;
-  
 }
-.logo{
-  text-shadow: 1px 1px 20px #c00;
+
+#hamburger {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
 }
-.navbar .nav-links {
+
+.nav-links {
   list-style: none;
   display: flex;
+  gap: 2rem;
 }
 
-.navbar .nav-links li {
-  margin-left: 2rem;
-}
-
-.navbar .nav-links a {
+.nav-links a {
   font-family: 'Beat Tech', sans-serif;
   text-decoration: none;
   color: #fff;
@@ -62,8 +66,52 @@ body {
   transition: color 0.3s;
 }
 
-.navbar .nav-links a:hover {
+.nav-links a:hover {
   color: #870f00;
+}
+
+/* Esconde o menu no mobile */
+.nav-links.hidden {
+  display: none;
+  
+}
+
+/* Mostra o menu em forma de lista suspensa no mobile */
+.nav-links.active {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: absolute;
+  top: 72px;
+  right: 20px;
+  background: linear-gradient(#36060b, transparent);
+  border: 1px solid #870f00;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  font-size: 16px;
+}
+
+/* Para telas pequenas */
+@media screen and (max-width: 768px) {
+  #hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+  }
+}
+
+/* Para telas grandes (acima de 768px) */
+@media screen and (min-width: 769px) {
+  .nav-links {
+    display: flex;
+  }
+
+  #hamburger {
+    display: none;
+  }
 }
 
 #titulo{
@@ -374,6 +422,7 @@ html {
   filter: blur(10px);
   opacity: 0;
   animation: blurIn .5s ease-out forwards;
+  
 }
 
 @keyframes blurIn {
@@ -385,4 +434,4 @@ html {
     filter: blur(0);
     opacity: 1;
   }
-}
+
