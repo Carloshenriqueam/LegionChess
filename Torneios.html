@@ -11,19 +11,18 @@
 <body>
   <header>
     <nav class="navbar">
-        <h1 class="logo">Chess Academy <span style="color:white;">pt</span></h1>
+        <h1 class="logo">Chess Academy <span style="color:white; text-shadow: 1px 1px 10px white;">pt</span></h1>
+            <div id="hamburger">☰</div>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="Torneios.html">Torneios</a></li>
       </ul>
     </nav>
   </header>
-
   <main>
   
   <div class="container-main">
     <div class="container-home-section">
-       
     <section class="home-section home">
        <a href="SpeedInfernal-tabela.html">
       <h2>Speed Infernal <p>1ª Edição</p> </h2>
@@ -37,7 +36,7 @@
  </div>
 <div class="container-home-section2">
     <section class="home-section2 home">
-         <a href="TimeofCalculo-tabela.html">
+         <a href="#">
       <h2>Time of Calculo <p>1ª Edição</p> </h2>
       <p class="informacoes2">
         • Formato:<br>
@@ -49,7 +48,7 @@
  </div>
 <div class="container-home-section3">
     <section class="home-section3 home3">
-      <a href="BulletChamps-tabela.html">
+      <a href="#">
       <h2>Bullet Champs <p>2ª Edição</p> </h2>
       <p class="informacoes3">
         • Formato: <br>
@@ -61,7 +60,7 @@
  </div>
 <div class="container-home-section4">
     <section class="home-section4 home4">
-     <a href="ChessClassic-tabela.html">
+     <a href="#">
       <h2>Chess Classic<p>1ª Edição</p> </h2>
       <p class="informacoes4">
         • Formato: <br>
@@ -73,12 +72,12 @@
   </div>
   <div class="container-home-section5">
     <section class="home-section5 home5">
-     <a href="WorldCup-tabela.html">
-      <h2>Copa do Mundo<p>1ª Edição</p> </h2>
+     <a href="#">
+      <h2>Copa do Mundo<p id="sub-titulo">1ª Edição</p> </h2>
       <p class="informacoes5">
-        • Formato: Eliminação<br>
-﻿        • Ritmo: 10+2<br>
-﻿        • Data: 01/02 <br>
+        • Formato: <br>
+﻿        • Ritmo:<br>
+﻿        • Data: 00/00 <br>
         ﻿• Site: Lichess</p> <br>
     </section>
     </a>
@@ -88,5 +87,14 @@
   <footer>
     <p>&copy; 2025 Chess Academy Portuguēs. Todos os direitos reservados.</p>
   </footer>
+   <script>
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.querySelector(".nav-links");// Alterna o menu ao clicar no botão hambúrguer
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("hidden");
+  navLinks.classList.toggle("active");
+});
+
+  </script>
 </body>
 </html>
