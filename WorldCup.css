@@ -41,12 +41,14 @@ body {
   margin-bottom: 5px;
   font-family: 'Beat Tech', sans-serif;
   text-shadow: 1px 1px 30px white;
+  margin-top: 5%;
 }
 
 .header p{
   font-size: 16px;
   color: #888;
   font-family: 'Beat Tech', sans-serif;
+  margin-bottom: 5%;
 }
 
 /* Bracket Section */
@@ -77,13 +79,16 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: nowrap; /* Impede a quebra de linha */
+  white-space: nowrap; /* Garante que o texto não quebre */
   margin-bottom: 15px;
   margin-right: 20px;
-  padding: 1px 1px;
+  padding: 10px; /* Ajustado para melhor espaçamento */
   background: rgba(255, 255, 255, 0.1);
   border-radius: 5px;
   border: 1px solid rgba(255, 255, 255, 0.2);
-
+  min-width: 150px; /* Define um tamanho mínimo */
+  overflow: hidden; /* Evita overflow caso o conteúdo ultrapasse */
 }
 .final {
   position: relative; /* Necessário para o uso do ::before */
@@ -126,7 +131,10 @@ body {
   font-family: 'Beat Tech', sans-serif;
   text-shadow: 1px 1px 30px  white;
 }
-
+.win{
+    color: #00bfff;
+    text-shadow: 1px 1px 10px #00bfff
+}
 /* Standings Section */
 .table {
   display: flex;
@@ -168,4 +176,12 @@ body {
   font-size: 20px;
   font-weight: bold;
   color: #00bfff;
+}
+.divider {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00bfff, transparent);
+  margin: 30px 0;
+  border: none;
+  margin: 5% 0;
 }
