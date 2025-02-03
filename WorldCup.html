@@ -24,7 +24,7 @@
             <span>Hiro | 🇮🇳</span>
             <div class="vs">0</div>
           </div>
-          <div class="match">
+          <div class="match" data-link1="https://lichess.org/jzL9NHQo" data-link2="https://lichess.org/vwxbRNe6" target="_blank" data-link3="https://lichess.org/ZVmrb7pg" data-link4="https://lichess.org/5w0ex09W" target="_blank">
             <div class="vs">1</div>
             <span>Jack | 🇮🇱</span>
             <div class="vs">VS</div>
@@ -334,5 +334,79 @@
       </div>
     </section>   
   </div>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Cria o pop-up dinamicamente
+    const popupOverlay = document.createElement('div');
+    popupOverlay.className = 'popup-overlay';
+    document.body.appendChild(popupOverlay);
+
+    const popup = document.createElement('div');
+    popup.className = 'popup';
+    popup.innerHTML = `
+      <div class="popup-header">Partidas:</div>
+      <div class="popup-body"></div>
+      <button class="popup-close">Fechar</button>
+    `;
+    document.body.appendChild(popup);
+
+    const popupBody = popup.querySelector('.popup-body');
+    const closeButton = popup.querySelector('.popup-close');
+
+    // Função para desabilitar o scroll
+    const disableScroll = () => {
+      document.body.style.overflow = 'hidden';
+    };
+
+    // Função para habilitar o scroll
+    const enableScroll = () => {
+      document.body.style.overflow = '';
+    };
+
+    // Evento para abrir o pop-up
+    document.querySelectorAll('.match').forEach(match => {
+      match.addEventListener('click', () => {
+        const player1 = match.querySelector('span:nth-of-type(1)').textContent;
+        const player2 = match.querySelector('span:nth-of-type(2)').textContent;
+
+        // Captura os links das partidas dos atributos data-link
+        const link1 = match.dataset.link1;
+        const link2 = match.dataset.link2;
+        const link3 = match.dataset.link3;
+        const link4 = match.dataset.link4;
+
+        // Exibe os detalhes no pop-up
+        popupBody.innerHTML = `
+          <p><strong>Jogadores:</strong> ${player1} VS ${player2}</p>
+          <p><strong>Links das partidas:</strong></p>
+          <ul>
+            ${link1 ? `<li><a href="${link1}" target="_blank">Partida 1</a></li>` : ''}
+            ${link2 ? `<li><a href="${link2}" target="_blank">Partida 2</a></li>` : ''}
+          </ul>
+          ${link3 ? `<li><a href="${link3}" target="_blank">Partida 3</a></li>` : ''}
+            ${link4 ? `<li><a href="${link4}" target="_blank">Partida 4</a></li>` : ''}
+          </ul>
+        `;
+
+        popup.classList.add('active');
+        popupOverlay.classList.add('active');
+        disableScroll(); // Desativa o scroll ao abrir o pop-up
+      });
+    });
+
+    // Evento para fechar o pop-up
+    closeButton.addEventListener('click', () => {
+      popup.classList.remove('active');
+      popupOverlay.classList.remove('active');
+      enableScroll(); // Habilita o scroll ao fechar o pop-up
+    });
+
+    popupOverlay.addEventListener('click', () => {
+      popup.classList.remove('active');
+      popupOverlay.classList.remove('active');
+      enableScroll(); // Habilita o scroll ao fechar o pop-up
+    });
+  });
+</script>
 </body>
 </html>
