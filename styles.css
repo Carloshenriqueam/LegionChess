@@ -128,12 +128,13 @@ body {
   padding: 5rem 2rem;
 }
 
-.home-section h2 {
+.home-section h1 {
   font-size: 2.5rem;
   color: #c00;
   margin-bottom: 1rem;
   text-shadow: 1px 1px 30px red;
   font-family: 'beat tech', Sans-Serif;
+  margin-top: 5%;
 }
 
 .home-section p {
@@ -146,7 +147,7 @@ body {
   padding: 3rem 2rem;
 }
 
-.torneios-section h2 {
+.torneios-section h1 {
   font-size: 2rem;
   color: #c00;
   margin-bottom: 2rem;
