@@ -35,11 +35,11 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background: linear-gradient(190deg, #000, transparent);
+  background: linear-gradient(190deg, #000, #530000a1);
   border-bottom: 3px solid #c00;
   border-radius: 0 0 20px 20px;
   box-shadow: 1px 1px 40px #870f00;
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(10px);
   position: fixed;
   top: 0;
   width: 100%;
@@ -132,7 +132,7 @@ body {
   font-size: 2.5rem;
   color: #c00;
   margin-bottom: 1rem;
-  text-shadow: 1px 1px 30px red;
+  text-shadow: 1px 1px 10px #000000;
   font-family: 'beat tech', Sans-Serif;
   margin-top: 5%;
 }
@@ -140,6 +140,7 @@ body {
 .home-section p {
   font-size: 1.2rem;
   color: #ddd;
+  text-shadow: 1px 1px 1px #000;
 }
 
 /* Torneios Section */
@@ -254,5 +255,24 @@ body {
   100% {
     filter: blur(0);
     opacity: 1;
+  }
+}
+
+body {
+  background: linear-gradient(#53000000, rgba(0, 0, 0, 10)),  
+              url('Background3.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  line-height: 1.6;
+  background-attachment: fixed;
+}
+
+/* Para telas menores */
+@media screen and (max-width: 768px) {
+  body {
+    background: linear-gradient(#53000000, rgba(0, 0, 0, 10)),  
+                url('Background3.png') no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: fixed;
   }
 }
