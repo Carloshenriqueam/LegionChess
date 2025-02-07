@@ -312,4 +312,7 @@ body {
   color: #e5e5e5;
   font-family: 'Beat Tech', sans-serif;
   background: linear-gradient(180deg, #646464, transparent);
+
+.loser-points{
+  color: #646464;
 }
