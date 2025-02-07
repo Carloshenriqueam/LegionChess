@@ -308,3 +308,8 @@ body {
 .popup-close:hover {
   background-color: #d32f2f;
 }
+.loser{
+  color: #e5e5e5;
+  font-family: 'Beat Tech', sans-serif;
+  background: linear-gradient(180deg, #646464, transparent);
+}
