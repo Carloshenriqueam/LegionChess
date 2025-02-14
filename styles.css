@@ -260,7 +260,7 @@ body {
 
 body {
   background: linear-gradient(#53000000, rgba(0, 0, 0, 10)),  
-              url('Background3.png') no-repeat center center fixed;
+              url('5.webp') no-repeat center center fixed;
   background-size: cover;
   color: #fff;
   line-height: 1.6;
@@ -271,8 +271,9 @@ body {
 @media screen and (max-width: 768px) {
   body {
     background: linear-gradient(#53000000, rgba(0, 0, 0, 10)),  
-                url('Background3.png') no-repeat center center fixed;
+                url('5.webp') no-repeat center center fixed;
     background-size: cover;
     background-attachment: fixed;
   }
 }
+
