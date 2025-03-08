@@ -15,13 +15,32 @@
 
 body {
   font-family: 'Arial', sans-serif;
-  background: linear-gradient(150deg,#000,#36060b, #000);
+  background: linear-gradient(150deg, #000, #36060b, #000);
   color: #fff;
   line-height: 1.5;
   padding: 20px;
-  width: 1200px; /* Largura fixa */
-  margin: auto; /* Centraliza o conteúdo horizontalmente */
+  width: 1200px;
+  margin: auto;
   background-attachment: fixed;
+  position: relative;
+}
+
+@keyframes moveBackground {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('5.webp') center/cover;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: -1;
+  animation: moveBackground 30s linear infinite alternate;
 }
 
 .page-container {
@@ -41,12 +60,14 @@ body {
   margin-bottom: 5px;
   font-family: 'Beat Tech', sans-serif;
   text-shadow: 1px 1px 30px white;
+  margin-top: 5%;
 }
 
 .header p{
   font-size: 16px;
   color: #888;
   font-family: 'Beat Tech', sans-serif;
+  margin-bottom: 5%;
 }
 
 /* Bracket Section */
@@ -77,13 +98,16 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: nowrap; /* Impede a quebra de linha */
+  white-space: nowrap; /* Garante que o texto não quebre */
   margin-bottom: 15px;
   margin-right: 20px;
-  padding: 1px 1px;
+  padding: 10px; /* Ajustado para melhor espaçamento */
   background: rgba(255, 255, 255, 0.1);
   border-radius: 5px;
   border: 1px solid rgba(255, 255, 255, 0.2);
-
+  min-width: 150px; /* Define um tamanho mínimo */
+  overflow: hidden; /* Evita overflow caso o conteúdo ultrapasse */
 }
 .final {
   position: relative; /* Necessário para o uso do ::before */
@@ -126,7 +150,10 @@ body {
   font-family: 'Beat Tech', sans-serif;
   text-shadow: 1px 1px 30px  white;
 }
-
+.win{
+    color: #00bfff;
+    text-shadow: 1px 1px 10px #00bfff
+}
 /* Standings Section */
 .table {
   display: flex;
@@ -143,17 +170,19 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(255, 255, 255, 0.1);
   padding: 10px 20px;
   border-radius: 5px;
   margin-bottom: 10px;
   border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #e5e5e5;
+  font-family: 'Beat Tech', sans-serif;
+  background: linear-gradient(180deg, #343434e3, transparent);
 }
 
 .position {
   font-size: 20px;
   font-weight: bold;
-  color:  #888;
+  color:  #9d9d9de3;
   text-shadow: 1px 1px 30px  white;
 }
 
@@ -168,4 +197,144 @@ body {
   font-size: 20px;
   font-weight: bold;
   color: #00bfff;
+  text-shadow: 1px 1px 20px #7aceff;
+}
+.divider {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00bfff, transparent);
+  margin: 30px 0;
+  border: none;
+  margin: 5% 0;
+}
+
+
+.popup.active {
+  display: block;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.popup-header {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-family: 'Beat Tech', sans-serif;
+  text-align: center; /* Centraliza o título */
+}
+
+.popup-body {
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.popup-body a {
+  text-decoration: none;
+  color: #777;
+  padding: 5px 8px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.popup-body a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.popup-close {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 5px;
+  transition: 0.3s;
+  font-family: 'Beat Tech', sans-serif;
+  display: block;
+  margin: 0 auto; /* Centraliza o botão */
+}
+
+.popup-close:hover {
+  background: #555;
+}
+
+/* Estilos para o pop-up */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 9999;
+}
+
+.popup-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+    background: linear-gradient(180deg, #36060b, transparent);
+  padding: 20px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 10000;
+  border: 1px solid #ff9292a1;
+}
+
+.popup.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.popup-header {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.popup-body {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.popup-close {
+  background-color: #880000a1;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.popup-close:hover {
+  background-color: #d32f2f;
+}
+.loser{
+  color: #e5e5e5;
+  font-family: 'Beat Tech', sans-serif;
+  background: linear-gradient(180deg, #646464, transparent);
+
+.loser-points{
+  color: #646464;
 }
