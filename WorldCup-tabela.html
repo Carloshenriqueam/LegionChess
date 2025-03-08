@@ -2,7 +2,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chess Academy Português</title>
+  <title>Legion Chess</title>
   <style>
     @font-face {
       font-family: Beat Tech;
@@ -98,7 +98,7 @@
 /* Para telas grandes (acima de 768px) */
 @media screen and (min-width: 769px) {
   .nav-links {
-    display: flex;
+    display: flex !important; /* Garante que o menu reaparece */
   }
 
   #hamburger {
@@ -129,18 +129,37 @@ iframe {
   height: 100%;
   border: none;
 }
+.logo {
+  width: 110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@keyframes slideIn {
+  0% { opacity: 0; transform: translateY(-50px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.logo {
+  width: 120px;
+  animation: slideIn 1.5s ease-out;
+}
 
   </style>
 </head>
 <body>
+<header>
   <nav class="navbar">
-    <h1 class="logo">Chess Academy <span style="color:white;">pt</span></h1>
+    <a href="index.html">
+      <img src="logo.png" alt="Legion Chess" class="logo">
+    </a>
     <div id="hamburger">☰</div>
-    <ul class="nav-links">
+    <ul class="nav-links hidden">
       <li><a href="index.html">Home</a></li>
       <li><a href="Torneios.html">Torneios</a></li>
     </ul>
   </nav>
+</header>
   <div class="iframe-container">
     <iframe src="WorldCup.html" title=""></iframe>
   </div>
