@@ -1,10 +1,10 @@
 @font-face {
   font-family: Beat Tech;
-  src: url('BEATTECH.otf')
+  src: url('BEATTECH.otf');
 }
 @font-face {
   font-family: Beat Tech2;
-  src: url('BEATTECH-Line.otf')
+  src: url('BEATTECH-Line.otf');
 }
 * {
   margin: 0;
@@ -18,16 +18,11 @@ body {
   line-height: 1.6;
   background-attachment: fixed;
 }
+
 @keyframes bg {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 100%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 50%; }
 }
 
 .navbar {
@@ -45,6 +40,13 @@ body {
   width: 100%;
   z-index: 1000;
   height: 72px;
+}
+
+.logo {
+  width: 110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .navbar .logo {
@@ -82,7 +84,6 @@ body {
 /* Esconde o menu no mobile */
 .nav-links.hidden {
   display: none;
-  
 }
 
 /* Mostra o menu em forma de lista suspensa no mobile */
@@ -115,11 +116,7 @@ body {
 /* Para telas grandes (acima de 768px) */
 @media screen and (min-width: 769px) {
   .nav-links {
-    display: flex;
-  }
-
-  #hamburger {
-    display: none;
+    display: flex !important; /* Garante que o menu reaparece */
   }
 }
 
@@ -206,7 +203,7 @@ body {
   align-items: center;
   border: 1px solid white;
   box-shadow: 1px 10px 20px rgba(0, 0, 0, 255);
-  animation: float-side 6s infinite ease-in-out; /* Animação adicionada */
+  animation: float-side 6s infinite ease-in-out;
 }
 
 .buttom-invite a {
@@ -215,25 +212,17 @@ body {
   text-decoration: none;
   font-size: 30px;
 }
+
 .container-buttom:hover {
   text-shadow: 1px 1px 20px red;
   transition: .5s;
 }
 
-/* Keyframes para o movimento lateral */
+
 @keyframes float-side {
-  0% {
-    transform: translateX(0); /* Posição inicial */
-  }
-  50% {
-    transform: translateY(-20px); /* Move para a direita */
-  }
-  -100% {
-    transform: translateX(50px); /* Move para a direita */
-  }
-  100% {
-    transform: translateX(0); /* Volta para a posição inicial */
-  }
+  0% { transform: translateX(0); }
+  50% { transform: translateY(-20px); } 
+  100% { transform: translateX(0); }
 }
 
 footer > p {
@@ -267,7 +256,6 @@ body {
   background-attachment: fixed;
 }
 
-/* Para telas menores */
 @media screen and (max-width: 768px) {
   body {
     background: linear-gradient(#53000000, rgba(0, 0, 0, 10)),  
@@ -277,3 +265,12 @@ body {
   }
 }
 
+@keyframes slideIn {
+  0% { opacity: 0; transform: translateY(-50px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.logo {
+  width: 120px;
+  animation: slideIn 1.5s ease-out;
+}
