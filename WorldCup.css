@@ -170,17 +170,19 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(255, 255, 255, 0.1);
   padding: 10px 20px;
   border-radius: 5px;
   margin-bottom: 10px;
   border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #e5e5e5;
+  font-family: 'Beat Tech', sans-serif;
+  background: linear-gradient(180deg, #343434e3, transparent);
 }
 
 .position {
   font-size: 20px;
   font-weight: bold;
-  color:  #888;
+  color:  #9d9d9de3;
   text-shadow: 1px 1px 30px  white;
 }
 
@@ -195,6 +197,7 @@ body {
   font-size: 20px;
   font-weight: bold;
   color: #00bfff;
+  text-shadow: 1px 1px 20px #7aceff;
 }
 .divider {
   width: 100%;
