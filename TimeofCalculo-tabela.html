@@ -1,135 +1,176 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html><html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chess Academy Português</title>
+  <title>Legion Chess</title>
   <style>
     @font-face {
       font-family: Beat Tech;
       src: url('BEATTECH.otf');
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    /* Estilo principal do Navbar */
-   .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      background: linear-gradient(190deg, #000, transparent);
-      border-bottom: 3px solid #c00;
-      border-radius: 0 0 20px 20px;
-      box-shadow: 1px 1px 40px #870f00;
-      top: 0;
-      width: 100%; /* Garante que o navbar não ultrapasse a largura da tela */
-      z-index: 1000;
-      height: 72px;
-      position: fixed;
-      backdrop-filter: blur(5px);
-    }
-
-    .navbar .logo {
-      font-size: 1.5rem;
-      color: #c00;
-      font-weight: bold;
-      text-shadow: 1px 1px 20px #c00;
-      font-family: 'Arial';
-    }
-
-    .navbar .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 2rem;
-    }
-
-    .navbar .nav-links a {
-      font-family: 'Beat Tech', sans-serif;
-      text-decoration: none;
-      color: #fff;
-      font-size: 1rem;
-      transition: color 0.3s;
-    }
-
-    .navbar .nav-links a:hover {
-      color: #870f00;
-    }
-
-    /* Estilo Responsivo para dispositivos menores */
-    @media screen and (max-width: 768px) {
-      .navbar {
-        flex-direction: row;
-        align-items: center;
-        padding: 1rem 3rem;
-      }
-
-      .navbar .nav-links {
-        gap: 2rem;
-        
-      }
-
-      .navbar .nav-links a {
-        font-size: 1.0rem;
-      }
-    }
-
-    /* Estilo base do corpo e iframe */
-    body {
-      margin: 0;
-      padding: 0;
-      height: 100vh; /* Define altura fixa para evitar scroll */
-      overflow: hidden; /* Remove o scroll vertical */
-      background: linear-gradient(#36060b, #000);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .iframe-container {
-      width: 100%;
-      height: calc(100vh - 80px); /* Altura total menos a altura do navbar */
-      overflow: hidden;
-      box-shadow: 10px 10px 30px black;
-      margin-top: 80px; /* Ajuste para compensar o navbar fixo */
-    }
-
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-    body {
-  filter: blur(10px);
-  opacity: 0;
-  animation: blurIn 1.5s ease-out forwards;
+    }* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@keyframes blurIn {
-  0% {
-    filter: blur(10px);
-    opacity: 0;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: linear-gradient(190deg, #000, transparent);
+  border-bottom: 3px solid #c00;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 1px 1px 40px #870f00;
+  backdrop-filter: blur(2px);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 72px;
+}
+
+.navbar .logo {
+  font-family: 'Arial', sans-serif;
+  font-size: 1.5rem;
+  color: #c00;
+  font-weight: bold;
+}
+
+#hamburger {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  font-family: 'Beat Tech', sans-serif;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #870f00;
+}
+
+/* Esconde o menu no mobile */
+.nav-links.hidden {
+  display: none;
+  
+}
+
+/* Mostra o menu em forma de lista suspensa no mobile */
+.nav-links.active {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  position: absolute;
+  top: 72px;
+  right: 20px;
+  background: linear-gradient(#36060b, transparent);
+  border: 1px solid #870f00;
+  border-radius: 10px;
+  padding: 1.1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  font-size: 16px;
+}
+
+/* Para telas pequenas */
+@media screen and (max-width: 768px) {
+  #hamburger {
+    display: block;
   }
-  100% {
-    filter: blur(0);
-    opacity: 1;
+
+  .nav-links {
+    display: none;
   }
+}
+
+/* Para telas grandes (acima de 768px) */
+@media screen and (min-width: 769px) {
+  .nav-links {
+    display: flex !important; /* Garante que o menu reaparece */
+  }
+
+  #hamburger {
+    display: none;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(#36060b, #000);
+  display: flex;
+  flex-direction: column;
+}
+
+.iframe-container {
+  width: 100%;
+  height: calc(100vh - 80px);
+  overflow: hidden;
+  box-shadow: 10px 20px 30px black;
+  margin-top: 80px;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+.logo {
+  width: 110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@keyframes slideIn {
+  0% { opacity: 0; transform: translateY(-50px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.logo {
+  width: 120px;
+  animation: slideIn 1.5s ease-out;
 }
   </style>
 </head>
 <body>
+<header>
   <nav class="navbar">
-    <h1 class="logo">Chess Academy <span style="color:white;">pt</span></h1>
-    <ul class="nav-links">
+    <a href="index.html">
+      <img src="logo.png" alt="Legion Chess" class="logo">
+    </a>
+    <div id="hamburger">☰</div>
+    <ul class="nav-links hidden">
       <li><a href="index.html">Home</a></li>
       <li><a href="Torneios.html">Torneios</a></li>
     </ul>
   </nav>
+</header>
   <div class="iframe-container">
     <iframe src="TimeofCalculo.html" title=""></iframe>
   </div>
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.querySelector(".nav-links");// Alterna o menu ao clicar no botão hambúrguer
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("hidden");
+  navLinks.classList.toggle("active");
+});
+
+  </script>
 </body>
 </html>
+
