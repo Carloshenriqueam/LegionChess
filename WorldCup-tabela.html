@@ -145,6 +145,49 @@ iframe {
   animation: slideIn 1.5s ease-out;
 }
 
+@keyframes menuExpand {
+  0% {
+    max-height: 0;
+    opacity: 0;
+  }
+  100% {
+    max-height: 200px;
+    opacity: 1;
+  }
+}
+
+.nav-links.active {
+  animation: menuExpand 0.5s ease-out forwards;
+}
+
+.navbar {
+  transition: transform 0.3s ease-in-out;
+}
+
+.hidden-navbar {
+  transform: translateY(-100%);
+}
+
+@keyframes slideUpLinks {
+  0% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.nav-links li {
+  opacity: 0;
+  animation: slideUpLinks 0.6s ease-out forwards;
+}
+
+.nav-links li:nth-child(1) { animation-delay: 0.2s; }
+.nav-links li:nth-child(2) { animation-delay: 0.4s; }
+.nav-links li:nth-child(3) { animation-delay: 0.6s; }
+
   </style>
 </head>
 <body>
