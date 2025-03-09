@@ -1,11 +1,11 @@
 /* Reset básico */
 @font-face {
   font-family: Beat Tech;
-  src: url('BEATTECH.otf')
+  src: url('BEATTECH.otf');
 }
 @font-face {
   font-family: Beat Tech2;
-  src: url('BEATTECH-Line.otf')
+  src: url('BEATTECH-Line.otf');
 }
 * {
   margin: 0;
@@ -63,7 +63,7 @@ body {
   margin-top: 5%;
 }
 
-.header p{
+.header p {
   font-size: 16px;
   color: #888;
   font-family: 'Beat Tech', sans-serif;
@@ -89,7 +89,7 @@ body {
 .round h2 {
   font-size: 24px;
   margin-bottom: 10px;
-  color:  #00bfff;
+  color: #00bfff;
   font-family: 'Beat Tech', sans-serif;
   text-shadow: 1px 1px 30px #7aceff;
 }
@@ -109,9 +109,10 @@ body {
   min-width: 150px; /* Define um tamanho mínimo */
   overflow: hidden; /* Evita overflow caso o conteúdo ultrapasse */
 }
+
 .final {
   position: relative; /* Necessário para o uso do ::before */
-  background: rgba(255, 255, 255, 00.1); /* Fundo do elemento *0
+  background: rgba(255, 255, 255, 0.1); /* Fundo do elemento */
   border-radius: 10px; /* Cantos arredondados */
   padding: 5px; /* Espaçamento interno */
   overflow: hidden; /* Garante que o gradiente não escape */
@@ -131,11 +132,12 @@ body {
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none; /* Garante que o elemento não interfira no clique */
-
 }
-.final span{
+
+.final span {
   text-shadow: 1px 1px 20px yellow;
 }
+
 .match span {
   font-size: 15px;
   margin: 15px;
@@ -148,57 +150,133 @@ body {
   border-radius: 5px;
   font-weight: bold;
   font-family: 'Beat Tech', sans-serif;
-  text-shadow: 1px 1px 30px  white;
+  text-shadow: 1px 1px 30px white;
 }
-.win{
-    color: #00bfff;
-    text-shadow: 1px 1px 10px #00bfff
+
+.win {
+  color: #00bfff;
+  text-shadow: 1px 1px 10px #00bfff;
 }
-/* Standings Section */
+
+/* Standings Section - Tabela Modificada */
 .table {
   display: flex;
   justify-content: space-between;
   gap: 20px;
   width: 1200px;
+  margin: 0 auto;
 }
 
 .table-column {
   width: 580px; /* Largura fixa para cada coluna */
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .table-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  border-radius: 5px;
+  padding: 15px 20px;
+  border-radius: 8px;
   margin-bottom: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #e5e5e5;
-  font-family: 'Beat Tech', sans-serif;
-  background: linear-gradient(180deg, #343434e3, transparent);
+  background: linear-gradient(145deg, rgba(54, 6, 11, 0.8), rgba(0, 0, 0, 0.8));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.table-row:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 .position {
   font-size: 20px;
   font-weight: bold;
-  color:  #9d9d9de3;
-  text-shadow: 1px 1px 30px  white;
+  color: #9d9d9d;
+  text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.2);
+  min-width: 40px; /* Garante alinhamento */
 }
 
 .player {
   flex: 1;
   text-align: left;
-  margin-left: 10px;
+  margin-left: 15px;
   font-size: 18px;
+  color: #e5e5e5;
+  font-family: 'Beat Tech', sans-serif;
 }
 
 .points {
   font-size: 20px;
   font-weight: bold;
   color: #00bfff;
-  text-shadow: 1px 1px 20px #7aceff;
+  text-shadow: 1px 1px 10px rgba(0, 191, 255, 0.5);
+  min-width: 60px; /* Garante alinhamento */
 }
+
+/* Estilo para perdedores */
+.loser {
+  background: linear-gradient(145deg, rgba(100, 100, 100, 0.8), rgba(0, 0, 0, 0.8));
+  color: #9d9d9d;
+}
+
+.loser .points {
+  color: #646464;
+  text-shadow: none;
+}
+
+/* Divisor entre as linhas */
+.table-row:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Aplica o destaque do Top 1, 2 e 3 apenas na primeira coluna */
+.table-column:first-child .table-row:nth-child(1) {
+  background: linear-gradient(145deg, rgba(255, 215, 0, 0.1), rgba(54, 6, 11, 0.8));
+  border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.table-column:first-child .table-row:nth-child(2) {
+  background: linear-gradient(145deg, rgba(192, 192, 192, 0.1), rgba(54, 6, 11, 0.8));
+  border: 1px solid rgba(192, 192, 192, 0.3);
+}
+
+.table-column:first-child .table-row:nth-child(3) {
+  background: linear-gradient(145deg, rgba(205, 127, 50, 0.1), rgba(54, 6, 11, 0.8));
+  border: 1px solid rgba(205, 127, 50, 0.3);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .table {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .table-column {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .table-row {
+    padding: 10px 15px;
+  }
+
+  .player {
+    font-size: 16px;
+  }
+
+  .points {
+    font-size: 18px;
+  }
+}
+
+/* Restante do CSS (popup, divider, etc.) */
 .divider {
   width: 100%;
   height: 2px;
@@ -208,59 +286,6 @@ body {
   margin: 5% 0;
 }
 
-
-.popup.active {
-  display: block;
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
-}
-
-.popup-header {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 15px;
-  font-family: 'Beat Tech', sans-serif;
-  text-align: center; /* Centraliza o título */
-}
-
-.popup-body {
-  font-size: 16px;
-  color: #fff;
-  margin-bottom: 15px;
-  text-align: center;
-}
-
-.popup-body a {
-  text-decoration: none;
-  color: #777;
-  padding: 5px 8px;
-  border-radius: 5px;
-  transition: background 0.3s;
-}
-
-.popup-body a:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.popup-close {
-  background: #333;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-size: 14px;
-  border-radius: 5px;
-  transition: 0.3s;
-  font-family: 'Beat Tech', sans-serif;
-  display: block;
-  margin: 0 auto; /* Centraliza o botão */
-}
-
-.popup-close:hover {
-  background: #555;
-}
-
-/* Estilos para o pop-up */
 .popup-overlay {
   position: fixed;
   top: 0;
@@ -284,9 +309,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-    background: linear-gradient(180deg, #36060b, transparent);
-  padding: 20px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(180deg, #36060b, transparent);
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -329,12 +352,4 @@ body {
 
 .popup-close:hover {
   background-color: #d32f2f;
-}
-.loser{
-  color: #e5e5e5;
-  font-family: 'Beat Tech', sans-serif;
-  background: linear-gradient(180deg, #646464, transparent);
-
-.loser-points{
-  color: #646464;
 }
