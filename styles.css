@@ -259,8 +259,7 @@ body {
 @media screen and (max-width: 768px) {
   body {
     background: linear-gradient(#53000000, rgba(0, 0, 0, 10)),  
-                url('1
-gif') no-repeat center center fixed;
+                url('1.webp') no-repeat center center fixed;
     background-size: cover;
     background-attachment: fixed;
   }
