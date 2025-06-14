@@ -249,7 +249,7 @@ body {
 
 body {
   background: linear-gradient(#53000000, rgba(0, 0, 0, 1)),  
-              url('1.gif') no-repeat center center fixed;
+              url('1.webp') no-repeat center center fixed;
   background-size: cover;
   color: #fff;
   line-height: 1.6;
