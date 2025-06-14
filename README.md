@@ -1,1 +1,1 @@
-# Chess-Academy
+# Legion Chess
