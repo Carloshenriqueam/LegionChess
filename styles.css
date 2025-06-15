@@ -138,6 +138,7 @@ body {
   font-size: 1.2rem;
   color: #ddd;
   text-shadow: 1px 1px 1px #000;
+  font-family: 'beat tech', Sans-Serif;
 }
 
 /* Torneios Section */
@@ -195,13 +196,13 @@ body {
 
 .buttom-invite {
   display: flex;
-  background: linear-gradient(#de0000e3, #0a0a0ae3);
+  background: linear-gradient(50deg,#de0000e3, #272727e3, #888888e3);
   width: 200px;
   height: 60px;
   border-radius: 10px;
   justify-content: center;
   align-items: center;
-  border: 1px solid white;
+ 
   box-shadow: 1px 10px 20px rgba(0, 0, 0, 255);
   animation: float-side 6s infinite ease-in-out;
 }
@@ -211,13 +212,12 @@ body {
   font-family: 'beat tech', sans-serif;
   text-decoration: none;
   font-size: 30px;
-}
-
-.container-buttom:hover {
-  text-shadow: 1px 1px 20px red;
   transition: .5s;
 }
-
+.buttom-invite a:hover{
+  text-shadow: 1px 1px 20px rgb(175, 175, 175);
+  transition: .5s;
+}
 
 @keyframes float-side {
   0% { transform: translateX(0); }
