@@ -4,46 +4,328 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Legion Chess</title>
+  <meta name="description" content="Participe dos torneios semanais de xadrez no Discord com premiações em dinheiro e ranking global. Competições emocionantes para todos os níveis.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
-  <link rel="shortcut icon" href="logo.png" type="image/x-icon">
 </head>
 <body>
-  <header>
+<!-- Seção Hero -->
+<section class="hero-section" id="home">
+  <div class="hero-content">
+    <h1>LEGION CHESS</h1>
+    <p class="hero-subtitle">Domine o tabuleiro, conquiste seu lugar no panteão</p>
+    <p class="hero-description">Junte-se a milhares de enxadristas em torneios semanais com premiações, ranking global e uma comunidade apaixonada por xadrez.</p>
+    
+    <div class="hero-buttons">
+      <a href="#tournaments" class="cta-button">Ver Torneios</a>
+      <a href="https://discord.gg/d9F3jsQCce" target="_blank" class="discord-button">
+        <i class="fab fa-discord"></i> Entrar no Discord
+      </a>
+    </div>
+  </div>
+  
+  <div class="hero-stats">
+    <div class="stat-item">
+      <span class="stat-number">1.200+</span>
+      <span class="stat-label">Jogadores Ativos</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">50+</span>
+      <span class="stat-label">Torneios Mensais</span>
+    </div>
+  </div>
+</section>
+
+<!-- Seção Destaques -->
+<section class="highlights-section">
+  <div class="highlight-card">
+    <i class="fas fa-trophy highlight-icon"></i>
+    <h3>Torneios Profissionais</h3>
+    <p>Competições organizadas com premiação em dinheiro e sistema de rating oficial.</p>
+  </div>
+  
+  <div class="highlight-card">
+    <i class="fas fa-users highlight-icon"></i>
+    <h3>Comunidade Ativa</h3>
+    <p>Participe de análises coletivas, treinos e eventos especiais com enxadristas de todo o Brasil.</p>
+  </div>
+  
+  <div class="highlight-card">
+    <i class="fas fa-chess highlight-icon"></i>
+    <h3>Para Todos os Níveis</h3>
+    <p>Torneios categorizados por rating, desde iniciantes até grandes mestres.</p>
+  </div>
+</section>
+
+<!-- Seção Como Funciona -->
+<section class="how-it-works">
+  <h2>COMO PARTICIPAR</h2>
+  <div class="steps-container">
+    <div class="step">
+      <div class="step-number">1</div>
+      <h3>Junte-se ao Discord</h3>
+      <p>Crie sua conta e entre no nosso servidor Discord oficial.</p>
+    </div>
+    
+    <div class="step">
+      <div class="step-number">2</div>
+      <h3>Registre-se no Site</h3>
+      <p>Complete seu perfil com seu nome de usuário e rating.</p>
+    </div>
+    
+    <div class="step">
+      <div class="step-number">3</div>
+      <h3>Inscreva-se nos Torneios</h3>
+      <p>Escolha entre os diversos torneios semanais disponíveis.</p>
+    </div>
+    
+    <div class="step">
+      <div class="step-number">4</div>
+      <h3>Jogue e Suba no Ranking</h3>
+      <p>Participe, acumule pontos e dispute as premiações!</p>
+    </div>
+  </div>
+</section>
   <nav class="navbar">
-    <a href="index.html">
-      <img src="logo.png" alt="Legion Chess" class="logo">
+    <a href="index.html" class="logo-container">
+      <span class="logo-text">LEGION CHESS</span>
     </a>
-    <div id="hamburger">☰</div>
-    <ul class="nav-links hidden">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="Torneios.html">Torneios</a></li>
+    
+    <button class="menu-toggle" id="menuToggle">
+      <i class="fas fa-bars"></i>
+    </button>
+    
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="nav-link">Início</a></li>
+      <li><a href="Torneios.html" class="nav-link">Torneios</a></li>
+      <li><a href="#ranking" class="nav-link">Ranking</a></li>
+      <li><a href="#rules" class="nav-link">Regras</a></li>
+      <li><a href="login.html" class="nav-button">Entrar</a></li>
     </ul>
   </nav>
-</header>
 
-  <main>
-    <section id="home" class="home-section">
-      <h1>Bem-vindo ao Clube!</h1>
-      <p>Descubra torneios incríveis e mostre suas habilidades no xadrez!</p>
-    </section>
-
-    <div class="container-buttom">
-      <div class="buttom-invite"><a href="Torneios.html">Torneios</a></div>
+  <!-- Seção Torneios -->
+  <section class="tournaments-section" id="tournaments">
+    <div class="section-header">
+      <h2>TORNEIOS <span>OPENS</span></h2>
+      <p>Participe das competições mais emocionantes de xadrez no Discord</p>
+      <div class="discord-badge">
+        <i class="fab fa-discord"></i>
+        EVENTOS SEMANAIS
+      </div>
     </div>
-  </main>
+    
+    <div class="tournament-cards">
+      <!-- Torneio 1 -->
+      <div class="tournament-card featured">
+        <div class="card-header">
+          <span class="tournament-badge">DESTAQUE</span>
+          <h3>Torneio Semanal Rapido</h3>
+        </div>
+        
+        <div class="card-details">
+          <div class="detail-item">
+            <span class="detail-icon"><i class="fas fa-calendar-alt"></i></span>
+            <span>15-18 Jul 2025</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-icon"><i class="fas fa-clock"></i></span>
+            <span>15min + 5s</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-icon"><i class="fas fa-crown"></i></span>
+            <span>Open</span>
+          </div>
+        </div>
+        
+        <div class="card-footer">
+          <div class="players-count">
+            <i class="fas fa-user"></i> 128/256 jogadores
+          </div>
+          <a href="#" class="register-button">Inscrever-se</a>
+        </div>
+      </div>
+      
+      <!-- Torneio 2 -->
+      <div class="tournament-card">
+        <div class="card-header">
+          <h3>Torneio Semanal Blitz</h3>
+        </div>
+        
+        <div class="card-details">
+          <div class="detail-item">
+            <span class="detail-icon"><i class="fas fa-calendar-alt"></i></span>
+            <span>22 Jul 2025</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-icon"><i class="fas fa-clock"></i></span>
+            <span>3min + 2s</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-icon"><i class="fas fa-crown"></i></span>
+            <span>Open</span>
+          </div>
+        </div>
+        
+        <div class="card-footer">
+          <div class="players-count">
+            <i class="fas fa-user"></i> 84/128 jogadores
+          </div>
+          <a href="#" class="register-button">Inscrever-se</a>
+        </div>
+      </div>
+      
+      <!-- Torneio 3 -->
+      <div class="tournament-card">
+        <div class="card-header">
+          <h3>Torneio Semanal Bullet</h3>
+        </div>
+        
+        <div class="card-details">
+          <div class="detail-item">
+            <span class="detail-icon"><i class="fas fa-calendar-alt"></i></span>
+            <span>05-08 Ago 2025</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-icon"><i class="fas fa-clock"></i></span>
+            <span>30min + 10s</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-icon"><i class="fas fa-crown"></i></span>
+            <span>Open</span>
+          </div>
+        </div>
+        
+        <div class="card-footer">
+          <div class="players-count">
+            <i class="fas fa-user"></i> 42/64 jogadores
+          </div>
+          <a href="#" class="register-button">Inscrever-se</a>
+        </div>
+      </div>
+    </div>
+  </section>
+ <section class="tournaments-section2" id="tournaments">
+        <div class="section-header">
+      <h2>TORNEIOS <span>OFICIAIS</span></h2>
+      <p>Participe das competições oficiais do servidor</p>
+      <div class="discord-badge">
+        EVENTOS SEMESTRAIS
+      </div>
+    </div>
+    <div class="tournament-cards">
+      <!-- Torneio 1 -->
+      <div class="tournament-card2 featured">
+        <div class="card-header">
 
-  <footer>
-    <p>&copy; 2025 Legion Chess. Todos os direitos reservados.</p>
-  </footer>
-
+          <h3>Speed Ifernal</h3>
+        </div>
+        
+        <div class="card-details">
+          <div class="detail-item">
+            <span class="detail-icon2"><i class="fas fa-calendar-alt"></i></span>
+            <span>15-18 Jul 2025</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-icon2"><i class="fas fa-clock"></i></span>
+            <span>15min + 5s</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-icon2"><i class="fas fa-crown"></i></span>
+            <span>Open</span>
+          </div>
+        </div>
+        
+        <div class="card-footer">
+          <div class="players-count">
+            <i class="fas fa-user"></i> 128/256 jogadores
+          </div>
+          <a href="#" class="register-button2">Inscrever-se</a>
+        </div>
+      </div>
+      
+      <!-- Torneio 2 -->
+      <div class="tournament-card3">
+        <div class="card-header">
+          <h3>Time Of Calculo</h3>
+        </div>
+        
+        <div class="card-details">
+          <div class="detail-item">
+            <span class="detail-icon3"><i class="fas fa-calendar-alt"></i></span>
+            <span>22 Jul 2025</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-icon3"><i class="fas fa-clock"></i></span>
+            <span>3min + 2s</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-icon3"><i class="fas fa-crown"></i></span>
+            <span>Open</span>
+          </div>
+        </div>
+        
+        <div class="card-footer">
+          <div class="players-count">
+            <i class="fas fa-user"></i> 84/128 jogadores
+          </div>
+          <a href="#" class="register-button3">Inscrever-se</a>
+        </div>
+      </div>
+      
+      <!-- Torneio 3 -->
+      <div class="tournament-card4">
+        <div class="card-header">
+          <h3>Bullet Champs</h3>
+        </div>
+        
+        <div class="card-details">
+          <div class="detail-item">
+            <span class="detail-icon4"><i class="fas fa-calendar-alt"></i></span>
+            <span>05-08 Ago 2025</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-icon4"><i class="fas fa-clock"></i></span>
+            <span>30min + 10s</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-icon4"><i class="fas fa-crown"></i></span>
+            <span>Open</span>
+          </div>
+        </div>
+        
+        <div class="card-footer">
+          <div class="players-count">
+            <i class="fas fa-user"></i> 42/64 jogadores
+          </div>
+          <a href="#" class="register-button4">Inscrever-se</a>
+        </div>
+      </div>
+    </div>
   <script>
-    const hamburger = document.getElementById("hamburger");
-    const navLinks = document.querySelector(".nav-links");
+    // Menu Mobile
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
 
-    // Alterna o menu ao clicar no botão hambúrguer
-    hamburger.addEventListener("click", () => {
-      navLinks.classList.toggle("hidden");
-      navLinks.classList.toggle("active");
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Fechar menu ao clicar em um link
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+
+    // Efeito de scroll na navbar
+    window.addEventListener('scroll', () => {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.style.padding = '0.5rem 2rem';
+      } else {
+        navbar.style.padding = '1.5rem 3rem';
+      }
     });
   </script>
 </body>

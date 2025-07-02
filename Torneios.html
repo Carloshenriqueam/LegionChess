@@ -3,101 +3,283 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
-  <title>Legion Chess</title>
-  <link rel="icon" href="logo.png">
+  <title>Legion Chess | Torneios Competitivos</title>
+  <meta name="description" content="Participe dos torneios de xadrez mais competitivos do Discord. Eventos semanais com premiações e ranking global.">
+  <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
+  <link rel="stylesheet" href=".css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="Torneio.css">
-  <link rel="stylesheet" href="Mediaquery.css">
 </head>
 <body>
- <header>
+  <!-- Navbar -->
   <nav class="navbar">
     <a href="index.html">
-      <img src="logo.png" alt="Legion Chess" class="logo">
+      <img src="assets/logo.png" alt="Legion Chess" class="logo">
     </a>
-    <div id="hamburger">☰</div>
-    <ul class="nav-links hidden">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="Torneios.html">Torneios</a></li>
+    
+    <button class="menu-toggle" id="menuToggle">
+      <i class="fas fa-bars"></i>
+    </button>
+    
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="Torneios.html" class="nav-link active">Torneios</a></li>
+      <li><a href="#" class="btn btn-primary">Entrar</a></li>
     </ul>
   </nav>
-</header>
+
+  <!-- Main Content -->
   <main>
-  
-  <div class="container-main">
-    <div class="container-home-section">
-    <section class="home-section home">
-       <a href="#">
-      <h2>Speed Infernal <p>1ª Edição</p> </h2>
-      <p class="informacoes">
-        • Formato: Eliminação <br>
-﻿        • Ritmo: 3+0,3+2 e 5+0 <br>
-﻿        • Data: 07/01 <br>
-        ﻿• Site: Lichess</p> <br>
-    </section>
-    </a>
- </div>
-<div class="container-home-section2">
-    <section class="home-section2 home">
-         <a href="TimeofCalculo-tabela.html">
-      <h2>Time of Calculo <p>1ª Edição</p> </h2>
-      <p class="informacoes2">
-        • Formato: Eliminação<br>
-﻿        • Ritmo:15+5<br>
-﻿        • Data: 08/03 <br>
-        ﻿• Site: Lichess</p> <br>
-    </section>
-    </a>
- </div>
-<div class="container-home-section3">
-    <section class="home-section3 home3">
-      <a href="#">
-      <h2>Bullet Champs <p>2ª Edição</p> </h2>
-      <p class="informacoes3">
-        • Formato: <br>
-﻿        • Ritmo:<br>
-﻿        • Data: 00/00 <br>
-        ﻿• Site: Lichess</p> <br>
-    </section>
-    </a>
- </div>
-<div class="container-home-section4">
-    <section class="home-section4 home4">
-     <a href="#">
-      <h2>Chess Classic<p>1ª Edição</p> </h2>
-      <p class="informacoes4">
-        • Formato: <br>
-﻿        • Ritmo:<br>
-﻿        • Data: 00/00 <br>
-        ﻿• Site: Lichess</p> <br>
-    </section>
-    </a>
-  </div>
-  <div class="container-home-section5">
-    <section class="home-section5 home5">
-     <a href="WorldCup-tabela.html">
-      <h2>Copa do Mundo<p id="sub-titulo">1ª Edição</p> </h2>
-      <p class="informacoes5">
-        • Formato: Eliminação  <br>
-﻿        • Ritmo: 10+2<br>
-﻿        • Data: 01/02 <br>
-        ﻿• Site: Lichess</p> <br>
-    </section>
-    </a>
-  </div>
- </div>
+    <div class="container">
+      <div class="section-header">
+        <h1>Torneios Legion Chess</h1>
+        <p>Competições semanais de xadrez no Discord com premiações e ranking</p>
+        <div class="discord-badge">
+          <i class="fab fa-discord"></i>
+          Eventos semanais
+        </div>
+      </div>
+      
+      <div class="tournaments-grid">
+        <!-- Speed Infernal -->
+        <a href="#" class="card tournament-card">
+          <div class="card-header">
+            <div class="tournament-title">
+              Speed Infernal
+              <span class="badge badge-primary edition-badge">1ª Edição</span>
+            </div>
+            <div class="tournament-prize">R$ 500</div>
+          </div>
+          
+          <div class="card-body">
+            <div class="info-item">
+              <div class="info-icon"><i class="fas fa-chess-board"></i></div>
+              <div class="info-text">Formato: Eliminação</div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon"><i class="fas fa-stopwatch"></i></div>
+              <div class="info-text">Ritmo: 3+0, 3+2 e 5+0</div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon"><i class="far fa-calendar-alt"></i></div>
+              <div class="info-text">Data: 07/01</div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon"><i class="fas fa-globe"></i></div>
+              <div class="info-text">Site: Lichess</div>
+            </div>
+          </div>
+          
+          <div class="card-footer">
+            <div class="players-count">
+              <i class="fas fa-users"></i> 128/256 jogadores
+            </div>
+            <div class="btn btn-discord">
+              Inscrever-se
+            </div>
+          </div>
+        </a>
+        
+        <!-- Time of Calculo -->
+        <a href="TimeofCalculo-tabela.html" class="card tournament-card">
+          <div class="card-header">
+            <div class="tournament-title">
+              Time of Calculo
+              <span class="badge badge-primary edition-badge">1ª Edição</span>
+            </div>
+            <div class="tournament-prize">R$ 300</div>
+          </div>
+          
+          <div class="card-body">
+            <div class="info-item">
+              <div class="info-icon"><i class="fas fa-chess-board"></i></div>
+              <div class="info-text">Formato: Eliminação</div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon"><i class="fas fa-stopwatch"></i></div>
+              <div class="info-text">Ritmo: 15+5</div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon"><i class="far fa-calendar-alt"></i></div>
+              <div class="info-text">Data: 08/03</div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon"><i class="fas fa-globe"></i></div>
+              <div class="info-text">Site: Lichess</div>
+            </div>
+          </div>
+          
+          <div class="card-footer">
+            <div class="players-count">
+              <i class="fas fa-users"></i> 84/128 jogadores
+            </div>
+            <div class="btn btn-discord">
+              Inscrever-se
+            </div>
+          </div>
+        </a>
+        
+        <!-- Bullet Champs -->
+        <a href="#" class="card tournament-card">
+          <div class="card-header">
+            <div class="tournament-title">
+              Bullet Champs
+              <span class="badge badge-primary edition-badge">2ª Edição</span>
+            </div>
+            <div class="tournament-prize">R$ 250</div>
+          </div>
+          
+          <div class="card-body">
+            <div class="info-item">
+              <div class="info-icon"><i class="fas fa-chess-board"></i></div>
+              <div class="info-text">Formato: A definir</div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon"><i class="fas fa-stopwatch"></i></div>
+              <div class="info-text">Ritmo: A definir</div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon"><i class="far fa-calendar-alt"></i></div>
+              <div class="info-text">Data: 00/00</div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon"><i class="fas fa-globe"></i></div>
+              <div class="info-text">Site: Lichess</div>
+            </div>
+          </div>
+          
+          <div class="card-footer">
+            <div class="players-count">
+              <i class="fas fa-users"></i> 0/64 jogadores
+            </div>
+            <div class="btn btn-discord">
+              Inscrever-se
+            </div>
+          </div>
+        </a>
+        
+        <!-- Chess Classic -->
+        <a href="#" class="card tournament-card">
+          <div class="card-header">
+            <div class="tournament-title">
+              Chess Classic
+              <span class="badge badge-primary edition-badge">1ª Edição</span>
+            </div>
+            <div class="tournament-prize">R$ 400</div>
+          </div>
+          
+          <div class="card-body">
+            <div class="info-item">
+              <div class="info-icon"><i class="fas fa-chess-board"></i></div>
+              <div class="info-text">Formato: A definir</div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon"><i class="fas fa-stopwatch"></i></div>
+              <div class="info-text">Ritmo: A definir</div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon"><i class="far fa-calendar-alt"></i></div>
+              <div class="info-text">Data: 00/00</div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon"><i class="fas fa-globe"></i></div>
+              <div class="info-text">Site: Lichess</div>
+            </div>
+          </div>
+          
+          <div class="card-footer">
+            <div class="players-count">
+              <i class="fas fa-users"></i> 0/64 jogadores
+            </div>
+            <div class="btn btn-discord">
+              Inscrever-se
+            </div>
+          </div>
+        </a>
+        
+        <!-- Copa do Mundo -->
+        <a href="WorldCup-tabela.html" class="card tournament-card">
+          <div class="card-header">
+            <div class="tournament-title">
+              Copa do Mundo
+              <span class="badge badge-primary edition-badge">1ª Edição</span>
+            </div>
+            <div class="tournament-prize">R$ 1000</div>
+          </div>
+          
+          <div class="card-body">
+            <div class="info-item">
+              <div class="info-icon"><i class="fas fa-chess-board"></i></div>
+              <div class="info-text">Formato: Eliminação</div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon"><i class="fas fa-stopwatch"></i></div>
+              <div class="info-text">Ritmo: 10+2</div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon"><i class="far fa-calendar-alt"></i></div>
+              <div class="info-text">Data: 01/02</div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon"><i class="fas fa-globe"></i></div>
+              <div class="info-text">Site: Lichess</div>
+            </div>
+          </div>
+          
+          <div class="card-footer">
+            <div class="players-count">
+              <i class="fas fa-users"></i> 42/64 jogadores
+            </div>
+            <div class="btn btn-discord">
+              Inscrever-se
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
   </main>
+
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Legion Chess. Todos os direitos reservados.</p>
   </footer>
-   <script>
-    const hamburger = document.getElementById("hamburger");
-    const navLinks = document.querySelector(".nav-links");// Alterna o menu ao clicar no botão hambúrguer
-hamburger.addEventListener("click", () => {
-  navLinks.classList.toggle("hidden");
-  navLinks.classList.toggle("active");
-});
 
+  <script>
+    // Menu Mobile
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    const navbar = document.querySelector('.navbar');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+    });
+
+    // Fechar menu ao clicar em um link
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('active');
+      });
+    });
+
+    // Efeito de scroll na navbar
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Animar cards ao carregar a página
+    document.addEventListener('DOMContentLoaded', () => {
+      const cards = document.querySelectorAll('.tournament-card');
+      cards.forEach((card, index) => {
+        card.style.animation = `fadeIn 0.5s ease-out ${index * 0.1}s forwards`;
+        card.style.opacity = '0';
+      });
+    });
   </script>
 </body>
 </html>
