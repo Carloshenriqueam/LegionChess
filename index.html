@@ -302,58 +302,96 @@
         </div>
       </div>
     </div>
-  // ...existing code...
 <script>
-  // Animação do ícone hamburguer e menu moderno
+  // Menu Hamburguer Moderno com animação de abrir/fechar
+
   const menuToggle = document.getElementById('menuToggle');
   const navLinks = document.getElementById('navLinks');
   const icon = menuToggle.querySelector('i');
+  const navItems = navLinks.querySelectorAll('li');
+
+  // Inicializa estado dos links
+  navItems.forEach((li) => {
+    li.style.opacity = 0;
+    li.style.transform = 'translateY(-20px)';
+  });
+
+  // Função para animar abertura dos links
+  function animateOpen() {
+    navItems.forEach((li, i) => {
+      li.style.transition = 'none';
+      li.style.opacity = 0;
+      li.style.transform = 'translateY(-20px)';
+      setTimeout(() => {
+        li.style.transition = 'opacity 0.4s, transform 0.4s';
+        li.style.opacity = 1;
+        li.style.transform = 'translateY(0)';
+      }, 100 + i * 80);
+    });
+  }
+
+  // Função para animar fechamento dos links
+  function animateClose() {
+    navItems.forEach((li, i) => {
+      setTimeout(() => {
+        li.style.transition = 'opacity 0.3s, transform 0.3s';
+        li.style.opacity = 0;
+        li.style.transform = 'translateY(-20px)';
+      }, i * 60);
+    });
+    // Aguarda animação antes de esconder o menu
+    setTimeout(() => {
+      navLinks.classList.remove('open');
+    }, navItems.length * 60 + 200);
+  }
 
   menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-    menuToggle.classList.toggle('active');
-    // Troca o ícone animado
-    if (menuToggle.classList.contains('active')) {
+    if (!navLinks.classList.contains('open')) {
+      navLinks.classList.add('open');
+      menuToggle.classList.add('active');
       icon.classList.remove('fa-bars');
       icon.classList.add('fa-times');
+      animateOpen();
     } else {
+      menuToggle.classList.remove('active');
       icon.classList.remove('fa-times');
       icon.classList.add('fa-bars');
+      animateClose();
     }
   });
 
-  // Fecha o menu ao clicar em um link (opcional)
-  document.querySelectorAll('.nav-link, .nav-button').forEach(link => {
+  // Fecha o menu ao clicar em um link
+  navLinks.querySelectorAll('.nav-link, .nav-button').forEach(link => {
     link.addEventListener('click', () => {
+      if (navLinks.classList.contains('open')) {
+        menuToggle.classList.remove('active');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+        animateClose();
+      }
+    });
+  });
+
+  // Garante que o menu feche ao redimensionar para desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 800) {
       navLinks.classList.remove('open');
       menuToggle.classList.remove('active');
       icon.classList.remove('fa-times');
       icon.classList.add('fa-bars');
-    });
-  });
-
-  // Animação de fade nos links do menu
-  const observer = new MutationObserver(() => {
-    if (navLinks.classList.contains('open')) {
-      navLinks.querySelectorAll('li').forEach((li, i) => {
-        li.style.opacity = 0;
-        li.style.transform = 'translateY(-20px)';
-        setTimeout(() => {
-          li.style.transition = 'opacity 0.4s, transform 0.4s';
-          li.style.opacity = 1;
-          li.style.transform = 'translateY(0)';
-        }, 100 + i * 80);
+      navItems.forEach((li) => {
+        li.style.opacity = 1;
+        li.style.transform = 'translateY(0)';
+        li.style.transition = '';
       });
     } else {
-      navLinks.querySelectorAll('li').forEach((li) => {
-        li.style.transition = 'none';
+      navItems.forEach((li) => {
         li.style.opacity = 0;
         li.style.transform = 'translateY(-20px)';
+        li.style.transition = '';
       });
     }
   });
-  observer.observe(navLinks, { attributes: true, attributeFilter: ['class'] });
-  
 </script>
 </body>
 </html>

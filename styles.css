@@ -14,7 +14,10 @@
   --shadow: 0 4px 24px rgba(0,0,0,0.13);
   --transition: .3s cubic-bezier(.4,0,.2,1);
 }
-
+    @font-face {
+      font-family: Beat Tech;
+      src: url('BEATTECH.otf');
+    }
 * {
   margin: 0;
   padding: 0;
@@ -63,6 +66,7 @@ html, body {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  font-family: 'Beat Tech', sans-serif;
 }
 
 .menu-toggle {
@@ -124,6 +128,7 @@ html, body {
   background: linear-gradient(to right, var(--primary), #fff2);
   -webkit-background-clip: text;
   color: transparent;
+    font-family: 'Beat Tech', sans-serif;
 }
 
 .hero-subtitle {
@@ -192,6 +197,7 @@ html, body {
   font-size: 2.2rem;
   font-weight: 700;
   color: #f5c542;
+  font-family: 'Beat Tech', sans-serif;
 }
 
 .stat-label {
@@ -234,6 +240,7 @@ html, body {
 .highlight-card h3 {
   margin-bottom: 1rem;
   color: var(--primary);
+  font-family: 'Beat Tech', sans-serif;
 }
 
 .highlight-card p {
@@ -254,6 +261,7 @@ html, body {
   font-weight: 800;
   color: var(--white);
   letter-spacing: 1px;
+  font-family: 'Beat Tech', sans-serif;
 }
 
 .steps-container {
@@ -298,12 +306,14 @@ html, body {
   font-weight: bold;
   font-size: 1.1rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.13);
+  font-family: 'Beat Tech', sans-serif;
 }
 
 .step h3 {
   margin: 1.2rem 0 0.7rem 0;
   color: var(--primary);
   font-size: 1.1rem;
+  font-family: 'Beat Tech', sans-serif;
 }
 
 .step p {
@@ -323,10 +333,12 @@ html, body {
   margin-bottom: 1rem;
   font-weight: 800;
   letter-spacing: 1px;
+  font-family: 'Beat Tech', sans-serif;
 }
 
 .section-header h2 span {
   color: var(--primary);
+    font-size: 2.2rem;
 }
 
 .section-header p {
@@ -590,7 +602,3 @@ html, body {
   background: var(--primary);
   border-radius: 6px;
 }
-
-/* ===== UTILITÁRIOS ===== */
-a { outline: none; }
-button:focus, a:focus { outline: 2px solid var(--primary); }
