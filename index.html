@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<div class="led-line-top"></div>
+
 <!-- Seção Hero -->
 <section class="hero-section" id="home">
   <div class="hero-content">
@@ -35,13 +37,17 @@
     </div>
   </div>
 </section>
-
+<div class="section-transition">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+    <polygon fill="#0a0a0a" points="0,0 1440,0 1440,60 0,30"/>
+  </svg>
+</div>
 <!-- Seção Destaques -->
 <section class="highlights-section">
   <div class="highlight-card">
     <i class="fas fa-trophy highlight-icon"></i>
     <h3>Torneios Profissionais</h3>
-    <p>Competições organizadas com premiação em dinheiro e sistema de rating oficial.</p>
+    <p>Competições organizadas com premiações e sistema de rating oficial.</p>
   </div>
   
   <div class="highlight-card">
@@ -56,7 +62,6 @@
     <p>Torneios categorizados por rating, desde iniciantes até grandes mestres.</p>
   </div>
 </section>
-
 <!-- Seção Como Funciona -->
 <section class="how-it-works">
   <h2>COMO PARTICIPAR</h2>
@@ -302,96 +307,23 @@
         </div>
       </div>
     </div>
+    <!-- Adicione antes da tag </body> -->
+<footer class="site-footer">
+  <div class="footer-content">
+    <span>&copy; 2025 Legion Chess. Todos os direitos reservados.</span>
+    <span>
+      <a href="https://discord.gg/d9F3jsQCce" target="_blank" class="footer-link">
+        <i class="fab fa-discord"></i> Discord
+      </a>
+      &nbsp;|&nbsp;
+      <a href="mailto:contato@legionchess.com" class="footer-link">
+        <i class="fas fa-envelope"></i> Contato
+      </a>
+    </span>
+  </div>
+</footer>
 <script>
-  // Menu Hamburguer Moderno com animação de abrir/fechar
 
-  const menuToggle = document.getElementById('menuToggle');
-  const navLinks = document.getElementById('navLinks');
-  const icon = menuToggle.querySelector('i');
-  const navItems = navLinks.querySelectorAll('li');
-
-  // Inicializa estado dos links
-  navItems.forEach((li) => {
-    li.style.opacity = 0;
-    li.style.transform = 'translateY(-20px)';
-  });
-
-  // Função para animar abertura dos links
-  function animateOpen() {
-    navItems.forEach((li, i) => {
-      li.style.transition = 'none';
-      li.style.opacity = 0;
-      li.style.transform = 'translateY(-20px)';
-      setTimeout(() => {
-        li.style.transition = 'opacity 0.4s, transform 0.4s';
-        li.style.opacity = 1;
-        li.style.transform = 'translateY(0)';
-      }, 100 + i * 80);
-    });
-  }
-
-  // Função para animar fechamento dos links
-  function animateClose() {
-    navItems.forEach((li, i) => {
-      setTimeout(() => {
-        li.style.transition = 'opacity 0.3s, transform 0.3s';
-        li.style.opacity = 0;
-        li.style.transform = 'translateY(-20px)';
-      }, i * 60);
-    });
-    // Aguarda animação antes de esconder o menu
-    setTimeout(() => {
-      navLinks.classList.remove('open');
-    }, navItems.length * 60 + 200);
-  }
-
-  menuToggle.addEventListener('click', () => {
-    if (!navLinks.classList.contains('open')) {
-      navLinks.classList.add('open');
-      menuToggle.classList.add('active');
-      icon.classList.remove('fa-bars');
-      icon.classList.add('fa-times');
-      animateOpen();
-    } else {
-      menuToggle.classList.remove('active');
-      icon.classList.remove('fa-times');
-      icon.classList.add('fa-bars');
-      animateClose();
-    }
-  });
-
-  // Fecha o menu ao clicar em um link
-  navLinks.querySelectorAll('.nav-link, .nav-button').forEach(link => {
-    link.addEventListener('click', () => {
-      if (navLinks.classList.contains('open')) {
-        menuToggle.classList.remove('active');
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
-        animateClose();
-      }
-    });
-  });
-
-  // Garante que o menu feche ao redimensionar para desktop
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 800) {
-      navLinks.classList.remove('open');
-      menuToggle.classList.remove('active');
-      icon.classList.remove('fa-times');
-      icon.classList.add('fa-bars');
-      navItems.forEach((li) => {
-        li.style.opacity = 1;
-        li.style.transform = 'translateY(0)';
-        li.style.transition = '';
-      });
-    } else {
-      navItems.forEach((li) => {
-        li.style.opacity = 0;
-        li.style.transform = 'translateY(-20px)';
-        li.style.transition = '';
-      });
-    }
-  });
 </script>
 </body>
 </html>

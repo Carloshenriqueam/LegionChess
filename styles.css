@@ -47,7 +47,6 @@ html, body {
   background: rgba(30,10,10,0.85);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255,255,255,0.06);
-  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
   box-shadow: var(--shadow);
 }
 
@@ -116,19 +115,49 @@ html, body {
 /* ===== HERO SECTION ===== */
 .hero-section {
   padding: 7rem 2rem 3rem 2rem;
-  background: radial-gradient(circle, rgba(255,0,0,0.07) 0%, transparent 70%);
   text-align: center;
+  /* Fundo tecnológico com tabuleiro e linhas */
+  background:
+   radial-gradient(circle at 60% 20%, rgba(215,35,35,0.10) 0%, transparent 70%),
+    repeating-linear-gradient(120deg, rgba(255, 0, 0, 0.07) 0 2px, transparent 2px 80px),
+    linear-gradient(135deg, #0a0a0a 60%, #1a0a0a 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  /* Tabuleiro de xadrez sutil */
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.23;
+  pointer-events: none;
+  background:
+    linear-gradient(45deg, rgba(215,35,35,0.12) 25%, transparent 25%, transparent 75%, rgba(215,35,35,0.12) 75%),
+    linear-gradient(45deg, rgba(215,35,35,0.12) 25%, transparent 25%, transparent 75%, rgba(215,35,35,0.12) 75%);
+  background-size: 60px 60px;
+  background-position: 0 0, 30px 30px;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
 }
 
 .hero-content h1 {
-  font-size: 3.5rem;
+  font-size: 5.5rem;
   font-weight: 900;
   letter-spacing: 2px;
   margin-bottom: 0.5rem;
-  background: linear-gradient(to right, var(--primary), #fff2);
+  background: linear-gradient(90deg, rgb(255, 16, 16) 40%, rgba(2, 2, 2, 0.774) 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
-    font-family: 'Beat Tech', sans-serif;
+  font-family: 'Beat Tech', sans-serif;
+  text-shadow:
+    0 2px 16px rgba(215,35,35,0.13),
+    0 1px 0 #fff2;
+  filter: drop-shadow(0 0 8px rgba(215,35,35,0.10));
 }
 
 .hero-subtitle {
@@ -136,6 +165,8 @@ html, body {
   color: var(--primary);
   font-weight: 600;
   margin-bottom: 1.2rem;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 8px rgba(215,35,35,0.13);
 }
 
 .hero-description {
@@ -143,6 +174,11 @@ html, body {
   margin: 0 auto 2rem auto;
   font-size: 1.1rem;
   color: var(--light-gray);
+  background: rgba(20,10,10,0.45);
+  border-radius: 10px;
+  padding: 0.7rem 1.2rem;
+  box-shadow: 0 2px 12px 0 rgba(215,35,35,0.04);
+  border-left: 3px solid var(--primary);
 }
 
 .hero-buttons {
@@ -151,6 +187,30 @@ html, body {
   gap: 1rem;
   margin-bottom: 2.5rem;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+
+/* Opcional: animação de brilho em botões */
+.hero-buttons .cta-button, .hero-buttons .discord-button {
+  position: relative;
+  overflow: hidden;
+}
+.hero-buttons .cta-button::after, .hero-buttons .discord-button::after {
+  content: "";
+  position: absolute;
+  left: -60%;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(214, 214, 214, 0.13) 0%, transparent 100%);
+  transform: skewX(-20deg);
+  transition: left 0.4s;
+  pointer-events: none;
+}
+.hero-buttons .cta-button:hover::after, .hero-buttons .discord-button:hover::after {
+  left: 120%;
+  transition: left 0.4s;
 }
 
 .cta-button, .discord-button {
@@ -168,7 +228,7 @@ html, body {
 }
 
 .cta-button:hover {
-  background: var(--primary-dark);
+  background: rgb(119, 1, 1);
   transform: translateY(-2px);
 }
 
@@ -213,39 +273,80 @@ html, body {
   flex-wrap: wrap;
   gap: 2rem;
   padding: 4rem 2rem 2rem 2rem;
-  background: radial-gradient(circle, rgba(255,0,0,0.05) 0%, transparent 70%);
+  background:
+    
+    linear-gradient(135deg, #0a0a0a 60%, #1a0a0a 100%);
+  position: relative;
+  overflow: hidden;
+}
+.highlights-section::before {
+  /* Tabuleiro de xadrez sutil */
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.23;
+  pointer-events: none;
+  background:
+    linear-gradient(45deg, rgba(215,35,35,0.12) 25%, transparent 25%, transparent 75%, rgba(215,35,35,0.12) 75%),
+    linear-gradient(45deg, rgba(215,35,35,0.12) 25%, transparent 25%, transparent 75%, rgba(215,35,35,0.12) 75%);
+  background-size: 60px 60px;
+  background-position: 0 0, 30px 30px;
+}
+@keyframes highlight-circuit {
+  0% { background-position: 0 0, 0 0; }
+  100% { background-position: 60px 60px, -60px -60px; }
 }
 
 .highlight-card {
-  background: rgba(40,0,0,0.13);
+  background: rgba(40,0,0,0.18);
   border-radius: var(--radius);
-  border: 1px solid #2e2e2e;
+  border: 1.5px solid #d72323;
   padding: 2rem 1.5rem;
   width: 300px;
-  box-shadow: var(--shadow);
+  box-shadow: 0 2px 24px 0 rgba(215,35,35,0.13);
   text-align: center;
-  transition: transform var(--transition);
+  transition: transform var(--transition), box-shadow var(--transition), border-color 0.3s;
+  position: relative;
+  overflow: visible;
 }
-
 .highlight-card:hover {
-  transform: translateY(-8px) scale(1.03);
+  transform: translateY(-10px) scale(1.04);
+  box-shadow: 0 8px 32px rgba(215,35,35,0.18), 0 0 0 2px #d72323;
 }
 
 .highlight-icon {
-  font-size: 2.5rem;
+  font-size: 2.7rem;
   color: var(--primary);
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
+  filter: drop-shadow(0 0 8px #d72323aa);
+  transition: filter 0.3s;
 }
+
 
 .highlight-card h3 {
   margin-bottom: 1rem;
   color: var(--primary);
   font-family: 'Beat Tech', sans-serif;
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 8px rgba(215,35,35,0.10);
 }
 
 .highlight-card p {
   color: var(--light-gray);
   line-height: 1.6;
+  font-size: 1.07rem;
+  background: rgba(20,10,10,0.13);
+  border-radius: 8px;
+  padding: 0.7rem 0.5rem;
+  box-shadow: 0 1px 8px 0 rgba(215,35,35,0.03);
+  border-left: 3px solid var(--primary);
+  transition: background 0.3s, border-color 0.3s;
+}
+.highlight-card:hover p {
+  background: rgba(215,35,35,0.07);
+  border-left: 3px solid #e4502b;
 }
 
 /* ===== COMO FUNCIONA ===== */
@@ -338,7 +439,6 @@ html, body {
 
 .section-header h2 span {
   color: var(--primary);
-    font-size: 2.2rem;
 }
 
 .section-header p {
@@ -362,7 +462,7 @@ html, body {
 }
 
 .tournaments-section, .tournaments-section2 {
-  padding: 4rem 0 2rem 0;
+  padding: 4rem 0 0rem 0;
   position: relative;
   overflow: hidden;
 }
@@ -401,7 +501,7 @@ html, body {
 
 .tournament-badge {
   position: absolute;
-  top: 1.2rem;
+  top: 4rem;
   right: 1.2rem;
   background: var(--primary);
   color: var(--white);
@@ -502,7 +602,98 @@ html, body {
   background: var(--primary-dark);
   transform: translateY(-2px);
 }
+/* ===== FOOTER ===== */
+.site-footer {
+  background: linear-gradient(90deg, rgba(30,10,10,0.97) 60%, rgba(88,101,242,0.10) 100%);
+  color: var(--light-gray);
+  padding: 2rem 1rem 1.2rem 1rem;
+  text-align: center;
+  font-size: 1.0rem;
+  border-radius: var(--radius) var(--radius) 0 0;
+  box-shadow: 0 -2px 16px rgba(0,0,0,0.13);
+  letter-spacing: 0.01em;
+  margin-top: 5rem;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
 
+.site-footer .footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.site-footer .footer-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  margin: 0 0.3em;
+  transition: color 0.2s, text-shadow 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  font-size: 1.0em;
+}
+
+.site-footer .footer-link:hover {
+  color: var(--white);
+  text-shadow: 0 2px 8px var(--primary);
+}
+
+.site-footer .footer-content i {
+  font-size: 1.0em;
+  vertical-align: middle;
+}
+
+.site-footer .footer-content span:first-child {
+  font-size: 1.0em;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 0.2em;
+  letter-spacing: 0.02em;
+}
+
+.site-footer::before {
+  content: "";
+  position: absolute;
+  left: -40px;
+  bottom: -40px;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+  opacity: 0.13;
+  z-index: 0;
+}
+
+.site-footer::after {
+  content: "";
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, var(--discord) 0%, transparent 70%);
+  opacity: 0.10;
+  z-index: 0;
+}
+
+@media (max-width: 600px) {
+  .site-footer {
+    font-size: 0.97rem;
+    padding: 1.2rem 0.2rem 0.7rem 0.2rem;
+  }
+  .site-footer .footer-content {
+    gap: 0.3rem;
+  }
+  .site-footer .footer-link {
+    font-size: 1em;
+  }
+}
 /* ===== RESPONSIVO ===== */
 @media (max-width: 1100px) {
   .tournament-cards {
@@ -602,3 +793,34 @@ html, body {
   background: var(--primary);
   border-radius: 6px;
 }
+.section-transition {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  margin: -30px 0 0 0;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+  background: transparent;
+  /* Suaviza a transição visual */
+  filter: drop-shadow(0 6px 24px #d7232322);
+  transition: filter 0.4s;
+}
+
+.section-transition svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.section-transition polygon {
+  /* Efeito de brilho sutil na borda da transição */
+  filter: drop-shadow(0 0 16px #d7232322);
+  transition: filter 0.4s;
+}
+
+/* Efeito de luz ao passar o mouse na section seguinte (opcional) */
+.section-transition:hover polygon {
+  filter: drop-shadow(0 0 32px #fff4) drop-shadow(0 0 16px #d72323cc);
+}
+
