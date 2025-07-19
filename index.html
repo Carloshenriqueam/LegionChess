@@ -1,328 +1,73 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Legion Chess</title>
-  <meta name="description" content="Participe dos torneios semanais de xadrez no Discord com premiações em dinheiro e ranking global. Competições emocionantes para todos os níveis.">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legion Chess</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Titillium+Web:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    
 </head>
 <body>
+<header>
+    <div class="container header-content">
+        <div class="logo"><a href="index.html" class="titulo">Legion<span>Chess</span></a></div>
+        <div class="season-info">
+            <p>Temporada 2025 | Xadrez Competitivo</p>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</header>
 
-<!-- Seção Hero -->
-<section class="hero-section" id="home">
-  <div class="hero-content">
-    <h1>LEGION CHESS</h1>
-    <p class="hero-subtitle">Domine o tabuleiro, conquiste seu lugar no panteão</p>
-    <p class="hero-description">Junte-se a milhares de enxadristas em torneios semanais com premiações, ranking global e uma comunidade apaixonada por xadrez.</p>
-    
-    <div class="hero-buttons">
-      <a href="#tournaments" class="cta-button">Ver Torneios</a>
-      <a href="https://discord.gg/d9F3jsQCce" target="_blank" class="discord-button">
-        <i class="fab fa-discord"></i> Entrar no Discord
-      </a>
+<nav>
+    <div class="container">
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html"><i class="fas fa-home"></i> Início</a></li>
+            <li><a href="eventos.html"><i class="fas fa-trophy"></i> Eventos</a></li>
+            <li><a href="regulamentos.html"><i class="fas fa-calendar-alt"></i> Regulamentos</a></li>
+            <li><a href="#"><i class="fas fa-envelope"></i> Contato</a></li>
+        </ul>
     </div>
-  </div>
-  
-  <div class="hero-stats">
-    <div class="stat-item">
-      <span class="stat-number">1.200+</span>
-      <span class="stat-label">Jogadores Ativos</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-number">50+</span>
-      <span class="stat-label">Torneios Mensais</span>
-    </div>
-  </div>
-</section>
-<div class="section-transition">
-  <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
-    <polygon fill="#0a0a0a" points="0,0 1440,0 1440,60 0,30"/>
-  </svg>
-</div>
-<!-- Seção Destaques -->
-<section class="highlights-section">
-  <div class="highlight-card">
-    <i class="fas fa-trophy highlight-icon"></i>
-    <h3>Torneios Profissionais</h3>
-    <p>Competições organizadas com premiações e sistema de rating oficial.</p>
-  </div>
-  
-  <div class="highlight-card">
-    <i class="fas fa-users highlight-icon"></i>
-    <h3>Comunidade Ativa</h3>
-    <p>Participe de análises coletivas, treinos e eventos especiais com enxadristas de todo o Brasil.</p>
-  </div>
-  
-  <div class="highlight-card">
-    <i class="fas fa-chess highlight-icon"></i>
-    <h3>Para Todos os Níveis</h3>
-    <p>Torneios categorizados por rating, desde iniciantes até grandes mestres.</p>
-  </div>
-</section>
-<!-- Seção Como Funciona -->
-<section class="how-it-works">
-  <h2>COMO PARTICIPAR?</h2>
-  <div class="steps-container">
-    <div class="step">
-      <div class="step-number">1</div>
-      <h3>Junte-se ao Discord</h3>
-      <p>Crie sua conta e entre no nosso servidor Discord oficial.</p>
-    </div>
-    
-    <div class="step">
-      <div class="step-number">2</div>
-      <h3>Registre-se no Site</h3>
-      <p>Complete seu perfil com seu nome de usuário e rating.</p>
-    </div>
-    
-    <div class="step">
-      <div class="step-number">3</div>
-      <h3>Inscreva-se nos Torneios</h3>
-      <p>Escolha entre os diversos torneios semanais disponíveis.</p>
-    </div>
-    
-    <div class="step">
-      <div class="step-number">4</div>
-      <h3>Jogue e Suba no Ranking</h3>
-      <p>Participe, acumule pontos e dispute as premiações!</p>
-    </div>
-  </div>
-</section>
-  <nav class="navbar">
-    <a href="index.html" class="logo-container">
-      <span class="logo-text">LEGION CHESS</span>
-    </a>
-    
-    <button class="menu-toggle" id="menuToggle">
-      <i class="fas fa-bars"></i>
-    </button>
-    
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#home" class="nav-link">Início</a></li>
-      <li><a href="Torneios.html" class="nav-link">Torneios</a></li>
-      <li><a href="#ranking" class="nav-link">Ranking</a></li>
-      <li><a href="#rules" class="nav-link">Regras</a></li>
-      <li><a href="login.html" class="nav-button">Entrar</a></li>
-    </ul>
-  </nav>
+</nav>
 
-  <!-- Seção Torneios -->
-  <section class="tournaments-section" id="tournaments">
-    <div class="section-header">
-      <h2>TORNEIOS <span class="second-title">OPENS</span></h2>
-      <p>Participe das competições mais emocionantes de xadrez no Discord</p>
-      <div class="discord-badge">
-        <i class="fab fa-discord"></i>
-        EVENTOS SEMANAIS
-      </div>
-    </div>
-    
-    <div class="tournament-cards">
-      <!-- Torneio 1 -->
-      <div class="tournament-card featured">
-        <div class="card-header">
-          <span class="tournament-badge">DESTAQUE</span>
-          <h3>Torneio Semanal Rapido</h3>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Legion Chess</h1>
+            <p>	Mais do que uma liga, a Juiced é um movimento — feito para revelar, valorizar e consagrar os verdadeiros nomes da velocidade.</p>
+            <a href="eventos.html" class="btn">Ver Eventos</a>
         </div>
-        
-        <div class="card-details">
-          <div class="detail-item">
-            <span class="detail-icon"><i class="fas fa-calendar-alt"></i></span>
-            <span>15-18 Jul 2025</span>
-          </div>
-          <div class="detail-item">
-            <span class="detail-icon"><i class="fas fa-clock"></i></span>
-            <span>15min + 5s</span>
-          </div>
-          <div class="detail-item">
-            <span class="detail-icon"><i class="fas fa-crown"></i></span>
-            <span>Open</span>
-          </div>
-        </div>
-        
-        <div class="card-footer">
-          <div class="players-count">
-            <i class="fas fa-user"></i> 128/256 jogadores
-          </div>
-          <a href="#" class="register-button">Inscrever-se</a>
-        </div>
-      </div>
-      
-      <!-- Torneio 2 -->
-      <div class="tournament-card">
-        <div class="card-header">
-          <h3>Torneio Semanal Blitz</h3>
-        </div>
-        
-        <div class="card-details">
-          <div class="detail-item">
-            <span class="detail-icon"><i class="fas fa-calendar-alt"></i></span>
-            <span>22 Jul 2025</span>
-          </div>
-          <div class="detail-item">
-            <span class="detail-icon"><i class="fas fa-clock"></i></span>
-            <span>3min + 2s</span>
-          </div>
-          <div class="detail-item">
-            <span class="detail-icon"><i class="fas fa-crown"></i></span>
-            <span>Open</span>
-          </div>
-        </div>
-        
-        <div class="card-footer">
-          <div class="players-count">
-            <i class="fas fa-user"></i> 84/128 jogadores
-          </div>
-          <a href="#" class="register-button">Inscrever-se</a>
-        </div>
-      </div>
-      
-      <!-- Torneio 3 -->
-      <div class="tournament-card">
-        <div class="card-header">
-          <h3>Torneio Semanal Bullet</h3>
-        </div>
-        
-        <div class="card-details">
-          <div class="detail-item">
-            <span class="detail-icon"><i class="fas fa-calendar-alt"></i></span>
-            <span>05-08 Ago 2025</span>
-          </div>
-          <div class="detail-item">
-            <span class="detail-icon"><i class="fas fa-clock"></i></span>
-            <span>30min + 10s</span>
-          </div>
-          <div class="detail-item">
-            <span class="detail-icon"><i class="fas fa-crown"></i></span>
-            <span>Open</span>
-          </div>
-        </div>
-        
-        <div class="card-footer">
-          <div class="players-count">
-            <i class="fas fa-user"></i> 42/64 jogadores
-          </div>
-          <a href="#" class="register-button">Inscrever-se</a>
-        </div>
-      </div>
-    </div>
-  </section>
- <section class="tournaments-section2" id="tournaments">
-        <div class="section-header">
-      <h2>TORNEIOS <span class="second-title">OFICIAIS</span></h2>
-      <p>Participe das competições oficiais do servidor</p>
-      <div class="discord-badge">
-        EVENTOS SEMESTRAIS
-      </div>
-    </div>
-    <div class="tournament-cards">
-      <!-- Torneio 1 -->
-      <div class="tournament-card2 featured">
-        <div class="card-header">
+    </section>
 
-          <h3>Speed Ifernal</h3>
-        </div>
+    <script>
+   
         
-        <div class="card-details">
-          <div class="detail-item">
-            <span class="detail-icon2"><i class="fas fa-calendar-alt"></i></span>
-            <span>15-18 Jul 2025</span>
-          </div>
-          <div class="detail-item">
-            <span class="detail-icon2"><i class="fas fa-clock"></i></span>
-            <span>15min + 5s</span>
-          </div>
-          <div class="detail-item">
-            <span class="detail-icon2"><i class="fas fa-crown"></i></span>
-            <span>Open</span>
-          </div>
-        </div>
-        
-        <div class="card-footer">
-          <div class="players-count">
-            <i class="fas fa-user"></i> 128/256 jogadores
-          </div>
-          <a href="#" class="register-button2">Inscrever-se</a>
-        </div>
-      </div>
-      
-      <!-- Torneio 2 -->
-      <div class="tournament-card3">
-        <div class="card-header">
-          <h3>Time Of Calculo</h3>
-        </div>
-        
-        <div class="card-details">
-          <div class="detail-item">
-            <span class="detail-icon3"><i class="fas fa-calendar-alt"></i></span>
-            <span>22 Jul 2025</span>
-          </div>
-          <div class="detail-item">
-            <span class="detail-icon3"><i class="fas fa-clock"></i></span>
-            <span>3min + 2s</span>
-          </div>
-          <div class="detail-item">
-            <span class="detail-icon3"><i class="fas fa-crown"></i></span>
-            <span>Open</span>
-          </div>
-        </div>
-        
-        <div class="card-footer">
-          <div class="players-count">
-            <i class="fas fa-user"></i> 84/128 jogadores
-          </div>
-          <a href="#" class="register-button3">Inscrever-se</a>
-        </div>
-      </div>
-      
-      <!-- Torneio 3 -->
-      <div class="tournament-card4">
-        <div class="card-header">
-          <h3>Bullet Champs</h3>
-        </div>
-        
-        <div class="card-details">
-          <div class="detail-item">
-            <span class="detail-icon4"><i class="fas fa-calendar-alt"></i></span>
-            <span>05-08 Ago 2025</span>
-          </div>
-          <div class="detail-item">
-            <span class="detail-icon4"><i class="fas fa-clock"></i></span>
-            <span>30min + 10s</span>
-          </div>
-          <div class="detail-item">
-            <span class="detail-icon4"><i class="fas fa-crown"></i></span>
-            <span>Open</span>
-          </div>
-        </div>
-        
-        <div class="card-footer">
-          <div class="players-count">
-            <i class="fas fa-user"></i> 42/64 jogadores
-          </div>
-          <a href="#" class="register-button4">Inscrever-se</a>
-        </div>
-      </div>
-    </div>
+        // Animar elementos quando aparecem na tela
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(el => {
+                const elTop = el.getBoundingClientRect().top;
+                if (elTop < window.innerHeight - 100) {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }
+            });
+        };
 
-<footer class="site-footer">
-  <div class="footer-content">
-    <span>&copy; 2025 Legion Chess. Todos os direitos reservados.</span>
-    <span>
-      <a href="https://discord.gg/d9F3jsQCce" target="_blank" class="footer-link">
-        <i class="fab fa-discord"></i> Discord
-      </a>
-      &nbsp;|&nbsp;
-      <a href="mailto:contato@legionchess.com" class="footer-link">
-        <i class="fas fa-envelope"></i> Contato
-      </a>
-    </span>
-  </div>
-</footer>
-<script>
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
 
-</script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('show');
+  });
+    </script>
 </body>
 </html>
