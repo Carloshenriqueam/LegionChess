@@ -14,9 +14,10 @@
   --shadow: 0 4px 24px rgba(0,0,0,0.13);
   --transition: .3s cubic-bezier(.4,0,.2,1);
 }
+
     @font-face {
       font-family: Beat Tech;
-      src: url('BEATTECH.otf');
+      src: url('fonts/BEATTECH.otf');
     }
 * {
   margin: 0;
@@ -139,11 +140,34 @@ html, body {
   background-size: 60px 60px;
   background-position: 0 0, 30px 30px;
 }
+
+.hero-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-image: url('imagens/Background3.png'); /* Substitua pelo caminho da sua imagem */
+  background-size: cover;
+  background-position: center;
+  opacity: 2; /* Ajuste a opacidade conforme necessário */
+  mix-blend-mode: overlay; /* Experimente diferentes blend modes: screen, multiply, etc. */
+}
+
 .hero-content {
   position: relative;
   z-index: 2;
+    animation: fadeInUp 1s ease-out both;
 }
-
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .hero-content h1 {
   font-size: 5.5rem;
   font-weight: 900;
@@ -247,6 +271,7 @@ html, body {
   gap: 2.5rem;
   margin-top: 1.5rem;
   flex-wrap: wrap;
+  animation: fadeInUp 1s ease-out both;
 }
 
 .stat-item {
