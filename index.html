@@ -1,73 +1,147 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Legion Chess</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Titillium+Web:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
-    
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Legion Chess</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header>
-    <div class="container header-content">
-        <div class="logo"><a href="index.html" class="titulo">Legion<span>Chess</span></a></div>
-        <div class="season-info">
-            <p>Temporada 2025 | Xadrez Competitivo</p>
-        </div>
-        <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </div>
-</header>
-
-<nav>
-    <div class="container">
-        <ul class="nav-links" id="navLinks">
-            <li><a href="index.html"><i class="fas fa-home"></i> Início</a></li>
-            <li><a href="eventos.html"><i class="fas fa-trophy"></i> Eventos</a></li>
-            <li><a href="regulamentos.html"><i class="fas fa-calendar-alt"></i> Regulamentos</a></li>
-            <li><a href="#"><i class="fas fa-envelope"></i> Contato</a></li>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo" aria-label="Legion Chess">Legion<span>Chess</span></a>
+      <nav class="nav" role="navigation" aria-label="Principal">
+        <ul>
+          <li><a href="#torneios">Torneios</a></li>
+          <li><a href="#calendario">Calendário</a></li>
+          <li><a href="#about">Sobre</a></li>
+          <li><a class="btn-primary" href="#entrar">Entrar</a></li>
         </ul>
+      </nav>
     </div>
-</nav>
+  </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Legion Chess</h1>
-            <p>	Mais do que uma liga, a Juiced é um movimento — feito para revelar, valorizar e consagrar os verdadeiros nomes da velocidade.</p>
-            <a href="eventos.html" class="btn">Ver Eventos</a>
+  <main>
+    <section class="hero" id="home" aria-label="Hero">
+      <div class="container hero-inner">
+        <h1 class="hero-title">Legion Chess</h1>
+        <p class="hero-lead">Plataforma de xadrez competitivo — torneios semanais, ranking oficial e transmissão ao vivo.</p>
+        <div class="hero-actions">
+          <a class="btn-cta" href="#torneios">Participar agora</a>
+          <a class="btn-ghost" href="#calendario">Ver calendário</a>
         </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="board-placeholder"><img src="imagens/board.png" alt=""></div>
+        </div>
+      </div>
     </section>
 
-    <script>
-   
-        
-        // Animar elementos quando aparecem na tela
-        const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.fade-in');
-            elements.forEach(el => {
-                const elTop = el.getBoundingClientRect().top;
-                if (elTop < window.innerHeight - 100) {
-                    el.style.opacity = '1';
-                    el.style.transform = 'translateY(0)';
-                }
-            });
-        };
+    <section id="torneios" class="section container">
+      <h2 class="section-title">Torneios Oficiais</h2>
+      <p class="section-sub">Escolha seu formato — Blitz, Rapid, Clássico ou Arena. Compita pelo ranking Legion.</p>
 
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
+      <div class="tournaments-grid" role="list">
+        <article class="tournament-card official red" role="listitem" aria-label="Blitz Legion">
+          <header class="card-head">
+            <h3 class="card-title">Blitz Legion</h3>
+            <span class="tag">5+0</span>
+          </header>
+          <div class="card-body">
+            <p>Rápido e intenso. Partidas com ritmo frenético e premiação diária.</p>
+            <ul class="meta">
+              <li>Inscritos: 128</li>
+              <li>Prêmio: 200 coins</li>
+            </ul>
+          </div>
+          <footer class="card-foot">
+            <a class="btn-sm" href="#">Inscrever</a>
+            <span class="players">● 128</span>
+          </footer>
+        </article>
 
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('navLinks');
+        <article class="tournament-card official blue" role="listitem" aria-label="Rapid Legion">
+          <header class="card-head">
+            <h3 class="card-title">Rapid Masters</h3>
+            <span class="tag">15+10</span>
+          </header>
+          <div class="card-body">
+            <p>Jogos com margem para estratégia — ideal para subir no rating.</p>
+            <ul class="meta">
+              <li>Inscritos: 64</li>
+              <li>Prêmio: 500 coins</li>
+            </ul>
+          </div>
+          <footer class="card-foot">
+            <a class="btn-sm" href="#">Inscrever</a>
+            <span class="players">● 64</span>
+          </footer>
+        </article>
 
-    hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navLinks.classList.toggle('show');
-  });
-    </script>
+        <article class="tournament-card official green" role="listitem" aria-label="Arena Legion">
+          <header class="card-head">
+            <h3 class="card-title">Arena Clash</h3>
+            <span class="tag">Arena</span>
+          </header>
+          <div class="card-body">
+            <p>Formato contínuo: pontue em várias partidas e suba no ranking da temporada.</p>
+            <ul class="meta">
+              <li>Inscritos: 240</li>
+              <li>Prêmio: por pontos</li>
+            </ul>
+          </div>
+          <footer class="card-foot">
+            <a class="btn-sm" href="#">Inscrever</a>
+            <span class="players">● 240</span>
+          </footer>
+        </article>
+
+        <article class="tournament-card official gold" role="listitem" aria-label="Championship Legion">
+          <header class="card-head">
+            <h3 class="card-title">Championship</h3>
+            <span class="tag">Clássico</span>
+          </header>
+          <div class="card-body">
+            <p>Formato clássico com controle de tempo longo — qualificatória para finais.</p>
+            <ul class="meta">
+              <li>Inscritos: 32</li>
+              <li>Prêmio: troféu</li>
+            </ul>
+          </div>
+          <footer class="card-foot">
+            <a class="btn-sm" href="#">Inscrever</a>
+            <span class="players">● 32</span>
+          </footer>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="section section-dark">
+      <div class="container">
+        <h2 class="section-title">Sobre a Legion</h2>
+        <p class="section-sub">Comunidade competitiva, regras claras e arbitragem automática. Conecte-se, treine e vença.</p>
+        <div class="features-grid">
+          <div class="feature">
+            <h4>Ranking Oficial</h4>
+            <p>Sistema de rating confiável e transparente.</p>
+          </div>
+          <div class="feature">
+            <h4>Comunidade Saúdavel</h4>
+            <p>Comunidade moderada para boa jogatina.</p>
+          </div>
+          <div class="feature">
+            <h4>Recompensas</h4>
+            <p>Prêmios diários e badges de temporada.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <strong>Legion Chess</strong> — Plataforma de xadrez competitivo</p>
+      <small>Política de privacidade • Termos</small>
+    </div>
+  </footer>
 </body>
 </html>

@@ -1,1179 +1,189 @@
-/* Variáveis atualizadas com efeitos tecnológicos */
-:root {
-    --primary-color: #000000;
-    --secondary-color: #ff0000; /* Verde mais ciano para efeito tecnológico */
-    --accent-color: #00b37d;
-    --dark-accent: #002218;
-    --light-text: #ffffff;
-    --dark-text: #111111;
-    --bg-gradient: linear-gradient(135deg, #000000 0%, #00100a 100%);
-    --card-bg: rgba(0, 20, 15, 0.6);
-    --section-bg: rgba(0, 30, 20, 0.95);
-    --font-main: 'Titillium Web', sans-serif;
-    --font-secondary: 'Roboto', sans-serif;
-    --glow-effect: 0 0 10px rgba(255, 0, 0, 0.7);
-    --thin-glow: 0 0 3px rgba(0, 255, 157, 0.9);
+:root{
+  --bg:#0b0b0b;
+  --panel:#0e0f10;
+  --muted:#bfbfbf;
+  --accent:#d72323;
+  --accent-dark:#9e1616;
+  --white:#ffffff;
+  --radius:14px;
+  --gap:1.25rem;
+  --max-width:1200px;
+  --shadow-sm:0 8px 28px rgba(0,0,0,0.5);
+  --shadow-lg:0 30px 80px rgba(2,2,2,0.75);
+  --trans:280ms cubic-bezier(.4,0,.2,1);
 }
-/* Estilo para navegadores baseados em WebKit (Chrome, Edge, Opera) */
-::-webkit-scrollbar {
-    width: 12px;
-    height: 12px;
-}
-
-::-webkit-scrollbar-track {
-    background: #0c0c0c; /* fundo da trilha */
-    border-radius: 6px;
-}
-
-::-webkit-scrollbar-thumb {
-    background: linear-gradient(135deg, #ff0000, #550000);
-    border-radius: 10px;
-    box-shadow: inset 0 0 5px rgba(255, 0, 0, 0.5);
-    transition: background 0.3s ease;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(135deg, #ff0000, #d40000);
-}
-@font-face {
-  font-family: Beat Tech;
-  src: url('fonts/BEATTECH.otf');
-}
-@font-face {
-  font-family: Beat Tech2;
-  src: url('fonts/BEATTECH-Line.otf');
-}
-/* Firefox (scrollbar styling ainda é limitado, mas funcional com isso) */
-* {
-    scrollbar-width: thin;
-    scrollbar-color: #ff000096 #0c0c0c;
-}
-
-/* Reset e estilos base com animações suaves */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: var(--font-secondary);
-    color: var(--light-text);
-    background-color: var(--primary-color);
-    line-height: 1.6;
-    overflow-x: hidden;
-    background-image:
-        radial-gradient(circle at 20% 30%, rgba(0, 255, 157, 0) 0%, transparent 20%),
-        radial-gradient(circle at 80% 70%, rgba(0, 255, 157, 0.05) 0%, transparent 20%);
-     width: 100%;
-
-@keyframes bgPulse {
-    0% {
-        background-position: 20% 30%, 80% 70%;
+  @font-face {
+      font-family: Beat Tech;
+      src: url('fonts/BEATTECH.otf');
     }
-    100% {
-        background-position: 30% 40%, 70% 60%;
-    }
-}
-}
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    
-}
-
-/* Header futurista */
-header {
-    background: linear-gradient(95deg, rgba(255, 70, 70, 0.111),black, transparent, rgba(255, 70, 70, 0.107));
-    padding: 15px 0;
-    border-bottom: 2px solid var(--secondary-color);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    backdrop-filter: blur(8px);
-    box-shadow: var(--glow-effect);
-    transition: all 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
-    
-}
-
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
-}
-
-.logo {
-    font-size: 2rem;
-    font-weight: 700;
-    color: transparent;
-    background: linear-gradient(90deg, var(--secondary-color), #ffffff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    position: relative;
-    padding-right: 10px;
-    
-}
-.titulo{
-    font-size: 2rem;
-    font-weight: 700;
-    color: transparent;
-    background: linear-gradient(90deg, var(--secondary-color), #ffffff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    position: relative;
-    font-family: 'Beat Tech', sans-serif;
-}
-
-
-.season-info {
-    font-family: var(--font-main);
-    font-weight: bolder;
-    color: var(--secondary-color);
-    text-align: right;
-    position: relative;
-    
-}
-
-/* Navigation high-tech */
-nav {
-    background: linear-gradient(95deg, rgba(255, 153, 70, 0.111),black, transparent, rgba(255, 113, 70, 0.107));
-    padding: 12px 0;
-    margin-top: 70px;
-    position: sticky;
-    top: 70px;
-    z-index: 999;
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba(255, 0, 0, 0.2);
-    transition: all 0.4s;
-    
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    justify-content: center;
-    gap: 25px;
-}
-
-.nav-links li {
-    position: relative;
-}
-
-.nav-links a {
-    color: var(--light-text);
-    text-decoration: none;
-    font-family: var(--font-main);
-    font-weight: 600;
-    font-size: 1.1rem;
-    transition: all 0.3s;
-    display: flex;
-    align-items: center;
-    padding: 5px 10px;
-    border-radius: 4px;
-}
-
-.nav-links a:hover {
-    color: var(--secondary-color);
-    text-shadow: 0 0 10px var(--secondary-color), 0 0 20px rgba(255, 0, 0, 0.342);
-    transform: scale(1.05);
-}
-
-.nav-links a:hover::before {
-    width: 100%;
-}
-
-.nav-links i {
-    margin-right: 8px;
-    background: linear-gradient(135deg, var(--secondary-color), #ff000096, var(--secondary-color));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    font-size: 1.2rem;
-    background-size: 200% auto;
-    animation: gradientFlow 5s ease infinite;
-}
-
-@keyframes fadeInNav {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Hero Section com efeitos */
-.hero {
-    position: relative;
-    height: 100vh;
-    min-height: 800px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    margin-top: -70px;
-    padding-top: 70px;
-    overflow: hidden;
-    z-index: 1;
-}
-
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: 
-        radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 30%),
-        radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.1) 0%, transparent 30%),
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.629) 70%, rgba(0,0,0,1) 100%),
-        url(imagens/1.webp);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 1;
-    z-index: -1;
-
-}
-
-@keyframes techGlow {
-    0% {
-        text-shadow: 0 0 10px rgba(0, 255, 157, 0.3), 0 0 20px rgba(0, 255, 157, 0.2);
-        background-position: 0% 50%;
-    }
-    50% {
-        text-shadow: 0 0 20px rgba(0, 255, 157, 0.6), 0 0 40px rgba(0, 255, 157, 0.4);
-        background-position: 100% 50%;
-    }
-    100% {
-        text-shadow: 0 0 10px rgba(0, 255, 157, 0.3), 0 0 20px rgba(0, 255, 157, 0.2);
-        background-position: 0% 50%;
-    }
-}
-
-
-@keyframes gridPulse {
-    0% {
-        background-position: 0% 0%, 0 0;
-    }
-    100% {
-        background-position: 100% 100%, 0 0;
-    }
-}
-
-.hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
-    position: relative;
-    z-index: 2;
-    
-}
-
-.hero h1 {
-    font-size: 4.5rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    background: linear-gradient(90deg, var(--secondary-color), #ffffff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    text-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
-    letter-spacing: 4px;
-    line-height: 1.2;
-    font-family: 'Beat Tech', sans-serif;
-    
-}
-
-@keyframes textGlow {
-    0% {
-        text-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
-    }
-    100% {
-        text-shadow: 0 0 20px rgba(255, 0, 0, 0.6), 0 0 30px rgba(255, 0, 0, 0.3);
-    }
-}
-
-.hero p {
-    font-size: 1.3rem;
-    margin-bottom: 40px;
-    line-height: 1.8;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    opacity: 0.9;
-    
-}
-
-.btn {
-    display: inline-block;
-    background: linear-gradient(135deg, #ff0000, #ff0000);
-    color: #0f0f0f;
-    padding: 15px 40px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    transition: all 0.3s ease;
-    border: none;
-    font-family: 'Titillium Web', sans-serif;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5), 0 0 40px rgba(255, 94, 0, 0.3);
-    isolation: isolate;
-}
-
-.btn::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: conic-gradient(from 180deg at center, transparent, rgba(0,255,157,0.2), transparent, rgba(0,183,255,0.2), transparent);
-    animation: rotateGlow 7s linear infinite;
-    z-index: -1;
-}
-
-.btn:hover {
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.7), 0 0 60px rgba(255, 102, 0, 0.4);
-    transform: scale(1.03);
-}
-
-@keyframes rotateGlow {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-
-.btn:hover::before {
-    left: 100%;
-}
-
-/* Seções com efeitos */
-section {
-    padding: 100px 0;
-}
-
-.section-title {
-    font-family: var(--font-main);
-    font-size: 2.8rem;
-    text-align: center;
-    margin-bottom: 80px;
-    background: linear-gradient(90deg, var(--secondary-color), #ffffff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    position: relative;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-      font-family: 'Beat Tech', sans-serif;
-}
-
-.section-title::after {
-    content: '';
-    display: block;
-    width: 120px;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
-    margin: 20px auto 0;
-    opacity: 0.7;
-}
-
-/* Features com animações */
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-    margin-top: 60px;
-}
-
-.feature-card {
-    background-color: var(--card-bg);
-    border-radius: 15px;
-    padding: 40px 30px;
-    text-align: center;
-    transition: all 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
-    border: 1px solid rgba(0, 255, 157, 0.1);
-    backdrop-filter: blur(10px);
-    opacity: 0;
-    transform: translateY(30px) rotateX(15deg);
-    transition: opacity 0.8s, transform 0.8s;
-    perspective: 1000px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    position: relative;
-    overflow: hidden;
-    transition: .5s; 
-    
-}
-
-.feature-card::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(
-        to bottom right,
-        rgba(0, 255, 157, 0) 0%,
-        rgba(0, 255, 157, 0) 46%,
-        rgba(0, 255, 157, 0.05) 47%,
-        rgba(0, 255, 157, 0.2) 52%,
-        rgba(0, 255, 157, 0) 53%,
-        rgba(0, 255, 157, 0) 100%
-    );
-    transform: rotate(30deg);
-    animation: shine 5s infinite;
-    
-}
-
-@keyframes shine {
-    0% { transform: rotate(30deg) translate(-30%, -30%); }
-    100% { transform: rotate(30deg) translate(30%, 30%); }
-}
-
-.feature-card.fade-in {
-    opacity: 1;
-    transform: translateY(0) rotateX(0);
-}
-
-.feature-card:hover {
-    transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 15px 40px rgba(0, 255, 157, 0.2);
-    border: 1px solid var(--secondary-color);
-    transition: .5s; 
-}
-
-.feature-icon {
-    font-size: 3rem;
-    color: var(--secondary-color);
-    margin-bottom: 25px;
-    transition: transform 0.5s;
-}
-
-.feature-card:hover .feature-icon {
-    transform: scale(1.2) rotate(10deg);
-}
-
-.feature-card h3 {
-    font-family: 'Beat Tech', sans-serif;
-    font-size: 1.6rem;
-    margin-bottom: 20px;
-    color: var(--secondary-color);
-    position: relative;
-    display: inline-block;
-    
-}
-
-.feature-card h3::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40px;
-    height: 2px;
-    background-color: var(--secondary-color);
-    transition: width 0.3s;
-    
-}
-
-.feature-card:hover h3::after {
-    width: 80px;
-}
-
-/* Next Race futurista */
-.next-race {
-    background: var(--section-bg);
-    position: relative;
-    overflow: hidden;
-    padding: 120px 0;
-}
-
-.next-race::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-        url('https://images.unsplash.com/photo-1543351611-58f69d7c1781?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover,
-        linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 30, 20, 0.8));
-    opacity: 0.3;
-    z-index: -1;
-}
-
-.next-race::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-        linear-gradient(45deg, transparent 48%, var(--secondary-color) 49%, var(--secondary-color) 51%, transparent 52%),
-        linear-gradient(-45deg, transparent 48%, var(--secondary-color) 49%, var(--secondary-color) 51%, transparent 52%);
-    background-size: 20px 20px;
-    opacity: 0.05;
-    pointer-events: none;
-    animation: gridMove 60s linear infinite;
-}
-
-@keyframes gridMove {
-    0% {
-        background-position: 0 0;
-    }
-    100% {
-        background-position: 1000px 1000px;
-    }
-}
-
-.race-info {
-    text-align: center;
-    max-width: 900px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
-}
-
-.race-title {
-    font-family: var(--font-main);
-    font-size: 3.5rem;
-    color: var(--secondary-color);
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
-    animation: pulse 2s infinite alternate;
-    
-    
-}
-
-@keyframes pulse {
-    0% {
-        text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
-    }
-    100% {
-        text-shadow: 0 0 20px rgba(0, 255, 157, 0.8), 0 0 30px rgba(0, 255, 157, 0.3);
-    }
-}
-
-.race-date {
-    font-size: 1.8rem;
-    margin-bottom: 50px;
-    color: var(--light-text);
-    font-weight: 300;
-    letter-spacing: 1px;
-    
-}
-
-/* Top Drivers high-tech */
-.top-drivers {
-    position: relative;
-    overflow: hidden;
-}
-
-.top-drivers::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-        radial-gradient(circle at 20% 30%, rgba(0, 255, 157, 0.03) 0%, transparent 20%),
-        radial-gradient(circle at 80% 70%, rgba(0, 255, 157, 0.03) 0%, transparent 20%);
-    z-index: -1;
-    
-}
-
-.drivers-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 40px;
-    margin-top: 60px;
-    
-}
-
-.driver-card {
-    background-color: var(--card-bg);
-    border-radius: 15px;
-    overflow: hidden;
-    transition: all 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
-    border: 1px solid rgba(0, 255, 157, 0.1);
-    backdrop-filter: blur(8px);
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s, transform 0.8s;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    position: relative;
-    transition: .5s; 
-}
-
-.driver-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        135deg,
-        rgba(0, 255, 157, 0.05) 0%,
-        transparent 50%,
-        rgba(0, 255, 157, 0.05) 100%
-    );
-    z-index: -1;
-}
-
-.driver-card.fade-in {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.driver-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 15px 40px rgba(0, 255, 157, 0.111);
-    border: 1px solid var(--secondary-color);
-    transition: .5s;
-}
-
-.driver-header {
-    background: linear-gradient(135deg, var(--accent-color), var(--dark-accent));
-    padding: 25px;
-    position: relative;
-    overflow: hidden;
-}
-
-.driver-header::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100px;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1));
-    transform: skewX(-30deg);
-    transform-origin: left top;
-}
-
-.driver-position {
-    position: absolute;
-    top: 15px;
-    left: 300px;
-    background-color: var(--secondary-color);
-    color: var(--dark-text);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 800;
-    font-family: var(--font-main);
-    font-size: 1.2rem;
-    box-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
-    
-}
-
-.driver-name {
-    font-family: var(--font-main);
-    font-size: 1.8rem;
-    margin-bottom: 5px;
-    color: var(--light-text);
-    letter-spacing: 1px;
-      font-family: 'Beat Tech', sans-serif;
-}
-
-.driver-car {
-    font-size: 1rem;
-    opacity: 0.8;
-    font-weight: 300;
-    letter-spacing: 0.5px;
-}
-
-.driver-body {
-    padding: 25px;
-    position: relative;
-}
-
-.driver-body::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 25px;
-    width: calc(100% - 50px);
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
-}
-
-.driver-points {
-    font-family: var(--font-main);
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: var(--secondary-color);
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-}
-
-.driver-points::after {
-    content: 'pts';
-    font-size: 1rem;
-    margin-left: 5px;
-    opacity: 0.7;
-    font-weight: 400;
-}
-
-.driver-races {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.95rem;
-    opacity: 0.8;
-    padding-top: 15px;
-    border-top: 1px dashed rgba(0, 255, 157, 0.3);
-}
-
-/* Newsletter futurista */
-.newsletter {
-    background: linear-gradient(135deg, var(--dark-accent), #000000);
-    text-align: center;
-    padding: 100px 0;
-    position: relative;
-    overflow: hidden;
-}
-
-.newsletter::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-        radial-gradient(circle at 70% 30%, rgba(0, 255, 157, 0.1) 0%, transparent 30%),
-        radial-gradient(circle at 30% 70%, rgba(0, 255, 157, 0.1) 0%, transparent 30%);
-    animation: bgFloat 20s infinite alternate;
-    
-}
-
-
-@keyframes bgFloat {
-    0% {
-        background-position: 70% 30%, 30% 70%;
-    }
-    100% {
-        background-position: 80% 40%, 20% 60%;
-    }
-}
-
-.newsletter h2 {
-    font-family: 'Beat Tech', sans-serif;
-    font-size: 2.5rem;
-    margin-bottom: 25px;
-    background: linear-gradient(90deg, var(--secondary-color), #ffffff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    position: relative;
-    display: inline-block;
-}
-
-.newsletter h2::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
-}
-
-.newsletter p {
-    max-width: 600px;
-    margin: 0 auto 40px;
-    font-size: 1.2rem;
-    line-height: 1.8;
-    opacity: 0.9;
-}
-
-.newsletter-form {
-    display: flex;
-    max-width: 600px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
-}
-
-.newsletter-input {
-    flex: 1;
-    padding: 18px 25px;
-    border: none;
-    border-radius: 50px 0 0 50px;
-    font-size: 1.1rem;
-    background-color: rgba(255, 255, 255, 0.9);
-    font-family: var(--font-secondary);
-    transition: all 0.3s;
-}
-
-.newsletter-input:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px var(--secondary-color);
-    background-color: white;
-}
-
-.newsletter-btn {
-    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
-    color: var(--dark-text);
-    border: none;
-    padding: 0 35px;
-    border-radius: 0 50px 50px 0;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    cursor: pointer;
-    transition: all 0.4s;
-    font-family: var(--font-main);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.newsletter-btn:hover {
-    background: linear-gradient(135deg, #00ffcc, #00a37d);
-    letter-spacing: 2px;
-}
-
-.newsletter-btn i {
-    transition: transform 0.3s;
-}
-
-.newsletter-btn:hover i {
-    transform: translateX(5px);
-}
-
-/* Footer high-tech */
-footer {
-    background: linear-gradient(to bottom, #000000, #00100a);
-    padding: 80px 0 0;
-    border-top: 1px solid var(--secondary-color);
-    position: relative;
-}
-
-footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
-}
-
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 50px;
-    margin-bottom: 60px;
-}
-
-.footer-column h4 {
-    font-family: 'Beat Tech', sans-serif;
-    font-size: 1.3rem;
-    margin-bottom: 25px;
-    color: var(--secondary-color);
-    position: relative;
-    padding-bottom: 15px;
-    letter-spacing: 1px;
-}
-
-.footer-column h4::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 50px;
-    height: 2px;
-    background: linear-gradient(90deg, var(--secondary-color), transparent);
-}
-
-.footer-links {
-    list-style: none;
-}
-
-.footer-links li {
-    margin-bottom: 12px;
-}
-
-.footer-links a {
-    color: var(--light-text);
-    text-decoration: none;
-    transition: all 0.3s;
-    font-size: 0.95rem;
-    display: inline-block;
-    position: relative;
-    padding-left: 15px;
-}
-
-.footer-links a::before {
-    content: '>';
-    position: absolute;
-    left: 0;
-    color: var(--secondary-color);
-    opacity: 0;
-    transition: all 0.3s;
-}
-
-.footer-links a:hover {
-    color: var(--secondary-color);
-    padding-left: 20px;
-}
-
-.footer-links a:hover::before {
-    opacity: 1;
-}
-
-.social-links {
-    display: flex;
-    gap: 20px;
-    margin-top: 25px;
-}
-
-.social-links a {
-    color: var(--light-text);
-    font-size: 1.3rem;
-    transition: all 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: rgba(0, 255, 157, 0.1);
-    border: 1px solid rgba(0, 255, 157, 0.2);
-}
-
-.social-links a:hover {
-    color: var(--secondary-color);
-    background-color: rgba(0, 255, 157, 0.2);
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 255, 157, 0.2);
-}
-
-.copyright {
-    text-align: center;
-    padding: 30px 0;
-    border-top: 1px solid rgba(0, 255, 157, 0.1);
-    font-size: 0.9rem;
-    opacity: 0.7;
-    letter-spacing: 0.5px;
-    font-family: 'Beat Tech', sans-serif;
-}
-
-/* Efeitos de scroll */
-.scroll-effect {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.8s, transform 0.8s;
-}
-
-.scroll-effect.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Responsividade */
-@media (max-width: 1024px) {
-    .hero h1 {
-        font-size: 3.5rem;
-    }
-    
-    .section-title {
-        font-size: 2.5rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .season-info {
-        display: none;
-    }
-    
-    .nav-links {
-        flex-wrap: wrap;
-        gap: 15px;
-    }
-    
-    .hero {
-        height: auto;
-        min-height: auto;
-        padding: 120px 0 80px;
-    }
-    
-    .hero h1 {
-        font-size: 2.8rem;
-    }
-    
-    .hero p {
-        font-size: 1.1rem;
-    }
-    
-    .section-title {
-        font-size: 2.2rem;
-        margin-bottom: 50px;
-    }
-    
-    .countdown-item {
-        min-width: 100px;
-        padding: 20px 15px;
-    }
-    
-    .countdown-number {
-        font-size: 2.5rem;
-    }
-    
-    .newsletter-form {
-        flex-direction: column;
-    }
-    
-    .newsletter-input {
-        border-radius: 50px;
-    }
-    
-    .newsletter-btn {
-        border-radius: 50px;
-        padding: 15px;
-        margin-top: 15px;
-        justify-content: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .logo {
-        font-size: 1.8rem;
-    }
-    
-    .nav-links a {
-        font-size: 1rem;
-        padding: 5px 8px;
-    }
-    
-    .hero h1 {
-        font-size: 2.2rem;
-    }
-    
-    .section-title {
-        font-size: 1.8rem;
-    }
-    
-    .race-title {
-        font-size: 2.5rem;
-    }
-    
-    .race-date {
-        font-size: 1.4rem;
-    }
-    
-    .countdown-item {
-        min-width: 80px;
-        padding: 15px 10px;
-    }
-    
-    .countdown-number {
-        font-size: 2rem;
-    }
-    
-    .countdown-label {
-        font-size: 0.8rem;
-    }
-    
-    .feature-card, .driver-card {
-        padding: 30px 20px;
-    }
-}
-header,
-nav {
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-/* Botão Hamburguer */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    z-index: 1001;
-}
-
-.hamburger span {
-    height: 3px;
-    width: 25px;
-    background: #00ff9d;
-    border-radius: 2px;
-    transition: 0.3s ease-in-out;
-}
-
-/* Animação ao abrir */
-.hamburger.active span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-}
-.hamburger.active span:nth-child(2) {
-    opacity: 0;
-}
-.hamburger.active span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-}
-
-/* Estilo para menu em telas pequenas */
-@media (max-width: 768px) {
-    .hamburger {
-        display: flex;
-    }
-
-    .nav-links {
-        position: absolute;
-        top: 10px;
-        left: 0;
-        width: 100%;
-        background: #053717d0;
-        flex-direction: column;
-        align-items: center;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.4s ease;
-        z-index: 1000;
-        border: 1px solid rgba(112, 255, 162, 0.652);
-    }
-
-    .nav-links.show {
-        max-height: 300px;
-        border-top: 1px solid rgba(0, 255, 157, 0.2);
-    }
-
-    .nav-links li {
-        width: 100%;
-        text-align: center;
-        padding: 10px 0;
-    }
-
-    .nav-links a {
-        justify-content: center;
-        width: 100%;
-        display: block;
-    }
+/* reset */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:"Segoe UI", Roboto, system-ui, -apple-system;
+  background:linear-gradient(180deg,var(--bg) 0%, #070707 100%);
+  color:var(--white);
+  -webkit-font-smoothing:antialiased;
+  line-height:1.5;
+}
+
+/* layout container */
+.container{max-width:var(--max-width);margin:0 auto;padding:0 1rem}
+
+/* header */
+.site-header{
+  position:sticky;
+  top:0;
+  background:rgba(0,0,0,0.45);
+  backdrop-filter:blur(6px);
+  z-index: 90;
+  border-bottom:1px solid rgba(255,255,255,0.03);
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:0.9rem 0}
+.logo{font-family: 'Beat Tech', sans-serif;font-weight:900;letter-spacing:0.6px;color:var(--white);text-decoration:none;font-size:1.2rem}
+.logo span{color:var(--accent);margin-left:6px}
+
+/* nav */
+.nav ul{display:flex;gap:1rem;list-style:none;align-items:center}
+.nav a{color:var(--muted);text-decoration:none;padding:0.45rem 0.6rem;border-radius:8px;font-weight:600}
+.nav a:hover{color:var(--white);background:rgba(255,255,255,0.03)}
+.btn-primary{background:linear-gradient(180deg,var(--accent),var(--accent-dark));color:var(--white);padding:0.5rem 0.9rem;border-radius:8px;text-decoration:none;font-weight:800}
+
+/* HERO
+   - overflow: visible para permitir que a imagem extrapole
+   - z-index acima do header para permitir sobreposição
+*/
+.hero{
+  padding:4.5rem 0 2.5rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+  overflow: visible;   /* permite "vazar" */
+  z-index:70;           /* > site-header */
+}
+.hero-inner{max-width:1100px}
+.hero-title{font-family: 'Beat Tech', sans-serif;font-size:3rem;font-weight:900;letter-spacing:10px;margin-bottom:0.4rem;color:var(--white);text-transform:uppercase;text-shadow:0 10px 30px rgba(0,0,0,0.6)}
+.hero-lead{color:var(--muted);max-width:70ch;margin:0.6rem auto 1rem;font-weight:600}
+.hero-actions{display:flex;gap:0.8rem;justify-content:center;margin-bottom:1.5rem}
+.btn-cta{font-family: 'Beat Tech', sans-serif;background:linear-gradient(180deg,var(--accent),var(--accent-dark));color:var(--white);padding:0.7rem 1.2rem;border-radius:999px;font-weight:900;text-decoration:none;box-shadow:0 14px 40px rgba(215,35,35,0.14);transition:transform var(--trans); letter-spacing:2px}
+.btn-cta:hover{transform:translateY(-4px)}
+.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--white);padding:0.6rem 1rem;border-radius:999px;text-decoration:none}
+
+/* hero visual area */
+.hero-visual{display:flex;justify-content:center;position:relative;overflow:visible;}
+
+/* container simples (sem transform) — não cria stacking context */
+.board-placeholder{
+  width:86%;
+  max-width:860px;
+  height:320px;
+  border-radius:14px;
+  background:linear-gradient(180deg,#1a1a1a,#0c0c0c);
+  box-shadow:var(--shadow-lg);
+  display:block;
+  position:relative;       
+  border:1px solid rgba(255,255,255,0.03);
+  overflow: visible;       
+  padding-bottom:48px;
+  z-index:72;              
+  margin-top: 10%;
+}
+.board-placeholder > img{
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -16%) rotateX(8deg) translateY(-28px);
+  width: 140%;
+  max-width: none;
+  height: auto;
+  display: block;
+  z-index:100; /* garante sobreposição acima do header e demais elementos */
+  border-radius: 10px;
+  transition: transform var(--trans), box-shadow var(--trans);
+  object-fit: cover;
+  pointer-events: none;
+
+}
+
+/* sombra projetada para reforçar ilusão */
+.board-placeholder::after{
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -40px;
+  transform: translateX(-50%);
+  width: 82%;
+  height: 56px;
+  background: radial-gradient(closest-side, rgba(0,0,0,0.55), rgba(0,0,0,0.12) 40%, transparent 70%);
+  filter: blur(18px);
+  z-index:71;
+  pointer-events: none;
+}
+/* rest of styles (tournaments, sections etc) kept minimal and conflict-free */
+.section{padding:2.25rem 0}
+.section-title{font-family: 'Beat Tech', sans-serif;text-align:center;font-size:1.6rem;font-weight:900;margin-bottom:0.4rem; letter-spacing:2px}
+.section-sub{text-align:center;color:var(--muted);margin-bottom:1rem}
+
+.tournaments-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--gap);margin-top:1rem}
+.tournament-card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-radius:12px;padding:0;border:1px solid rgba(255,255,255,0.03);box-shadow:var(--shadow-sm);display:flex;flex-direction:column;overflow:hidden;transition:transform var(--trans),box-shadow var(--trans),filter var(--trans)}
+.tournament-card:hover{transform:translateY(-8px);box-shadow:0 30px 80px rgba(0,0,0,0.6);filter:saturate(1.06) brightness(1.02)}
+.card-head{padding:1rem 1rem 0.6rem;display:flex;justify-content:space-between;align-items:flex-start}
+.card-title{font-family: 'Beat Tech', sans-serif;font-size:1.05rem;font-weight:800;letter-spacing:2px}
+.tag{background:rgba(255,255,255,0.03);color:var(--muted);padding:0.25rem 0.6rem;border-radius:999px;font-weight:800;font-size:0.82rem}
+.card-body{padding:0.9rem 1rem 1rem;flex:1;color:var(--muted)}
+.card-body p{margin-bottom:0.6rem}
+.meta{list-style:none;padding:0;margin:0;color:var(--muted);display:flex;gap:0.9rem;font-weight:700;font-size:0.9rem}
+.card-foot{padding:0.8rem 1rem;border-top:1px solid rgba(255,255,255,0.03);display:flex;justify-content:space-between;align-items:center;background:linear-gradient(180deg,rgba(0,0,0,0.02),transparent)}
+.btn-sm{background:linear-gradient(180deg,var(--accent),var(--accent-dark));color:var(--white);padding:0.45rem 0.8rem;border-radius:8px;text-decoration:none;font-weight:800}
+
+/* tournaments grid */
+.tournaments-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--gap);margin-top:1rem}
+.tournament-card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-radius:12px;padding:0;border:1px solid rgba(255,255,255,0.03);box-shadow:var(--shadow-sm);display:flex;flex-direction:column;overflow:hidden;transition:transform var(--trans),box-shadow var(--trans),filter var(--trans)}
+.tournament-card:hover{transform:translateY(-8px);box-shadow:0 30px 80px rgba(0,0,0,0.6);filter:saturate(1.06) brightness(1.02)}
+.card-head{padding:1rem 1rem 0.6rem;display:flex;justify-content:space-between;align-items:flex-start}
+.card-title{font-family: 'Beat Tech', sans-serif;font-size:1.05rem;font-weight:800}
+.tag{background:rgba(255,255,255,0.03);color:var(--muted);padding:0.25rem 0.6rem;border-radius:999px;font-weight:800;font-size:0.82rem}
+.card-body{padding:0.9rem 1rem 1rem;flex:1;color:var(--muted)}
+.card-body p{margin-bottom:0.6rem}
+.meta{list-style:none;padding:0;margin:0;color:var(--muted);display:flex;gap:0.9rem;font-weight:700;font-size:0.9rem}
+.card-foot{padding:0.8rem 1rem;border-top:1px solid rgba(255,255,255,0.03);display:flex;justify-content:space-between;align-items:center;background:linear-gradient(180deg,rgba(0,0,0,0.02),transparent)}
+.btn-sm{background:linear-gradient(180deg,var(--accent),var(--accent-dark));color:var(--white);padding:0.45rem 0.8rem;border-radius:8px;text-decoration:none;font-weight:800}
+
+/* players */
+.players{color:var(--muted);font-weight:800}
+
+/* official color variants */
+.official{border-width:2px;position:relative}
+.red{background:linear-gradient(135deg,#971b1b 45%, #5c0101 100%);border-color:#ff4d4d33}
+.blue{background:linear-gradient(135deg,#535ed3 45%, #232b5c 100%);border-color:#7ca7ff33}
+.green{background:linear-gradient(135deg,#3BA55D 45%, #1e3d2f 100%);border-color:#4cffb333}
+.gold{background:linear-gradient(135deg,#ff9f22 45%, #792a06 100%);border-color:#ffe06633}
+
+/* features */
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}
+.feature{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:1rem;border-radius:10px;border:1px solid rgba(255,255,255,0.03);text-align:center}
+.feature h4{font-family: 'Beat Tech', sans-serif;margin-bottom:0.4rem; letter-spacing:2px}
+
+/* footer */
+.site-footer{padding:1.8rem 0;background:transparent;color:var(--muted);text-align:center;margin-top:2rem;border-top:1px solid rgba(255,255,255,0.03)}
+
+/* utilities */
+.badge{display:inline-flex;padding:0.2rem 0.6rem;border-radius:999px;background:rgba(255,255,255,0.03);font-weight:800}
+
+/* responsive adjustments */
+@media (max-width:720px){
+  .board-placeholder{ width:92%; height:240px; padding-bottom:32px; }
+  .board-placeholder > img{
+    width:120%;
+    transform: translate(-50%, -8%) rotateX(6deg) translateY(-12px);
+    box-shadow: 0 28px 60px rgba(0,0,0,0.6);
+  }
+  .board-placeholder::after{ height:34px; bottom:-28px; width:88%; filter:blur(14px); }
+}
+
+/* accessibility */
+@media (prefers-reduced-motion: reduce){
+  .board-placeholder > img, .board-placeholder, .hero{ transition:none!important; transform:none!important }
 }
