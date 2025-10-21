@@ -7,130 +7,138 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="site-header">
+  <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a href="#" class="logo" aria-label="Legion Chess">Legion<span>Chess</span></a>
+      <a href="#" class="logo" aria-label="Legion Chess">
+        </span> Legion<span>Chess</span>
+      </a>
       <nav class="nav" role="navigation" aria-label="Principal">
         <ul>
-          <li><a href="#torneios">Torneios</a></li>
-          <li><a href="#calendario">Calendário</a></li>
-          <li><a href="#about">Sobre</a></li>
-          <li><a class="btn-primary" href="#entrar">Entrar</a></li>
+          <li><a href="#ranking">Ranking</a></li>
+          <li><a href="#eventos">Eventos</a></li>
+          <li><a href="#clans">Clãs</a></li>
+          <button id="botao-login-google" class="botao-google btn-primary">Login</button>
         </ul>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="hero" id="home" aria-label="Hero">
+    <section class="hero" id="home" aria-label="Seção principal">
       <div class="container hero-inner">
-        <h1 class="hero-title">Legion Chess</h1>
-        <p class="hero-lead">Plataforma de xadrez competitivo — torneios semanais, ranking oficial e transmissão ao vivo.</p>
-        <div class="hero-actions">
-          <a class="btn-cta" href="#torneios">Participar agora</a>
-          <a class="btn-ghost" href="#calendario">Ver calendário</a>
+        <div class="hero-content">
+          <h1 class="hero-title">jogue no <span class="arena-gradient">Legion Chess</span></h1>
+          <p class="hero-lead">O campo de batalha do xadrez competitivo. Suba no ranking, conquiste troféus e lidere seu clã rumo à glória.</p>
+          <div class="hero-actions">
+            <a class="btn-cta" href="#eventos">Entrar</a>
+            <a class="btn-ghost" href="#ranking">Ver Ranking</a>
+          </div>
         </div>
         <div class="hero-visual" aria-hidden="true">
-          <div class="board-placeholder"><img src="imagens/board.png" alt=""></div>
+          <div class="board-placeholder" role="img" aria-label="Tabuleiro Legion Arena">
+            <img src="imagens/board.png" alt="Tabuleiro Legion Arena" class="board-image">
+            <div class="arena-glow"></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="torneios" class="section container">
-      <h2 class="section-title">Torneios Oficiais</h2>
-      <p class="section-sub">Escolha seu formato — Blitz, Rapid, Clássico ou Arena. Compita pelo ranking Legion.</p>
-
-      <div class="tournaments-grid" role="list">
-        <article class="tournament-card official red" role="listitem" aria-label="Blitz Legion">
-          <header class="card-head">
-            <h3 class="card-title">Blitz Legion</h3>
-            <span class="tag">5+0</span>
-          </header>
-          <div class="card-body">
-            <p>Rápido e intenso. Partidas com ritmo frenético e premiação diária.</p>
-            <ul class="meta">
-              <li>Inscritos: 128</li>
-              <li>Prêmio: 200 coins</li>
+    <section id="eventos" class="section section-dark">
+      <div class="container">
+        <h2 class="section-title">Torneios Semanais</h2>
+        <div class="events-grid">
+          <div class="event-card blitz">
+            <div class="event-header">
+              <span class="event-icon">⚡</span>
+              <h3>Blitz Arena</h3>
+            </div>
+            <p>Partidas rápidas, adrenalina máxima. Vença sequências para multiplicar pontos!</p>
+            <ul>
+              <li>Tempo: 3+2</li>
+              <li>Premiação: 500 Legion Coins</li>
             </ul>
+            <a href="#" class="btn-sm">Participar</a>
           </div>
-          <footer class="card-foot">
-            <a class="btn-sm" href="#">Inscrever</a>
-            <span class="players">● 128</span>
-          </footer>
-        </article>
-
-        <article class="tournament-card official blue" role="listitem" aria-label="Rapid Legion">
-          <header class="card-head">
-            <h3 class="card-title">Rapid Masters</h3>
-            <span class="tag">15+10</span>
-          </header>
-          <div class="card-body">
-            <p>Jogos com margem para estratégia — ideal para subir no rating.</p>
-            <ul class="meta">
-              <li>Inscritos: 64</li>
-              <li>Prêmio: 500 coins</li>
+          <div class="event-card bullet">
+            <div class="event-header">
+              <span class="event-icon">🔥</span>
+              <h3>Bullet Royale</h3>
+            </div>
+            <p>1 minuto por jogador. Só os mais rápidos sobrevivem. Elimine rivais, suba no topo!</p>
+            <ul>
+              <li>Tempo: 1+0</li>
+              <li>Premiação: 300 Legion Coins</li>
             </ul>
+            <a href="#" class="btn-sm">Participar</a>
           </div>
-          <footer class="card-foot">
-            <a class="btn-sm" href="#">Inscrever</a>
-            <span class="players">● 64</span>
-          </footer>
-        </article>
-
-        <article class="tournament-card official green" role="listitem" aria-label="Arena Legion">
-          <header class="card-head">
-            <h3 class="card-title">Arena Clash</h3>
-            <span class="tag">Arena</span>
-          </header>
-          <div class="card-body">
-            <p>Formato contínuo: pontue em várias partidas e suba no ranking da temporada.</p>
-            <ul class="meta">
-              <li>Inscritos: 240</li>
-              <li>Prêmio: por pontos</li>
+          <div class="event-card classic">
+            <div class="event-header">
+              <span class="event-icon">🏆</span>
+              <h3>Clássico Elite</h3>
+            </div>
+            <p>Controle de tempo tradicional, partidas transmitidas e análise ao vivo.</p>
+            <ul>
+              <li>Tempo: 15+10</li>
+              <li>Premiação: Troféu digital</li>
             </ul>
+            <a href="#" class="btn-sm">Participar</a>
           </div>
-          <footer class="card-foot">
-            <a class="btn-sm" href="#">Inscrever</a>
-            <span class="players">● 240</span>
-          </footer>
-        </article>
-
-        <article class="tournament-card official gold" role="listitem" aria-label="Championship Legion">
-          <header class="card-head">
-            <h3 class="card-title">Championship</h3>
-            <span class="tag">Clássico</span>
-          </header>
-          <div class="card-body">
-            <p>Formato clássico com controle de tempo longo — qualificatória para finais.</p>
-            <ul class="meta">
-              <li>Inscritos: 32</li>
-              <li>Prêmio: troféu</li>
-            </ul>
-          </div>
-          <footer class="card-foot">
-            <a class="btn-sm" href="#">Inscrever</a>
-            <span class="players">● 32</span>
-          </footer>
-        </article>
+        </div>
       </div>
     </section>
 
-    <section id="about" class="section section-dark">
+    <section id="ranking" class="section">
       <div class="container">
-        <h2 class="section-title">Sobre a Legion</h2>
-        <p class="section-sub">Comunidade competitiva, regras claras e arbitragem automática. Conecte-se, treine e vença.</p>
-        <div class="features-grid">
-          <div class="feature">
-            <h4>Ranking Oficial</h4>
-            <p>Sistema de rating confiável e transparente.</p>
+        <h2 class="section-title">Top 5 — Ranking Legion</h2>
+        <table class="ranking-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Jogador</th>
+              <th>Clã</th>
+              <th>Rating</th>
+              <th>Troféus</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td><td><span class="player gold">MagnusX</span></td><td></td><td>2850</td><td>🏆🏆🏆</td>
+            </tr>
+            <tr>
+              <td>2</td><td><span class="player silver">QueenHunter</span></td><td>Queens</td><td>2710</td><td>🏆🏆</td>
+            </tr>
+            <tr>
+              <td>3</td><td><span class="player bronze">DarkHorse</span></td><td></td><td>2655</td><td>🏆</td>
+            </tr>
+            <tr>
+              <td>4</td><td>ChessStorm</td><td>Bishops</td><td>2590</td><td></td>
+            </tr>
+            <tr>
+              <td>5</td><td>RedPawn</td><td>Pawns</td><td>2520</td><td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="clans" class="section section-dark">
+      <div class="container">
+        <h2 class="section-title">Clãs em Ascensão</h2>
+        <div class="clans-grid">
+          <div class="clan-card">
+            <span class="clan-icon">♞</span>
+            <h4>Knights</h4>
+            <p>Domínio tático e defesa impenetrável.</p>
           </div>
-          <div class="feature">
-            <h4>Comunidade Saúdavel</h4>
-            <p>Comunidade moderada para boa jogatina.</p>
+          <div class="clan-card">
+            <span class="clan-icon">♛</span>
+            <h4>Queens</h4>
+            <p>Movimentos ousados e finais brilhantes.</p>
           </div>
-          <div class="feature">
-            <h4>Recompensas</h4>
-            <p>Prêmios diários e badges de temporada.</p>
+          <div class="clan-card">
+            <span class="clan-icon">♜</span>
+            <h4>Rooks</h4>
+            <p>Controle total das colunas e linhas.</p>
           </div>
         </div>
       </div>
@@ -139,9 +147,38 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>© <strong>Legion Chess</strong> — Plataforma de xadrez competitivo</p>
-      <small>Política de privacidade • Termos</small>
+      <p>© <strong>Legion Chess</strong> — Xadrez competitivo reinventado</p>
+      <small>Desenvolvido para mentes estratégicas • legion-chess.vercel.app</small>
     </div>
   </footer>
+<script>
+  const firebaseConfig = {
+  apiKey: "AIzaSyALuUNxOypa_jYl5Ojsnq1-cU648iLux_g",
+  authDomain: "legionchess-7d4d2.firebaseapp.com",
+  databaseURL: "https://legionchess-7d4d2-default-rtdb.firebaseio.com",
+  projectId: "legionchess-7d4d2",
+  storageBucket: "legionchess-7d4d2.firebasestorage.app",
+  messagingSenderId: "834694040961",
+  appId: "1:834694040961:web:563e165b2cdcb39662ac80",
+  measurementId: "G-NGQV431NBB"
+};
+
+        // 3. INICIALIZA O FIREBASE
+        firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+
+        // 4. LÊ UM DADO DO BANCO DE DADOS
+        const mensagemRef = database.ref('mensagem_de_teste');
+
+        mensagemRef.on('value', (snapshot) => {
+            const mensagemDoBanco = snapshot.val();
+            const elementoMensagem = document.getElementById('mensagem');
+            elementoMensagem.textContent = mensagemDoBanco;
+});
+</script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
+<script src="login.js"></script>
 </body>
 </html>
